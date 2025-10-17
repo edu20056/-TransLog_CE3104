@@ -1,6 +1,6 @@
 :- encoding(utf8).
 :- consult('Logic.pl').
-:- consult('BD1.pl').
+:- consult('BD.pl').
 
 % ==========================
 % INTERFAZ
