@@ -223,99 +223,96 @@ sustantivo('libro', 'book', 'singular').
 sustantivo('libros', 'books', 'plural').
 
 % === VERBOS ===
-% verbo(InfinitivoEsp, InfinitivoEng, Presente3raEsp, Presente3raEng)
-verbo('ser', 'be', 'es', 'is').
-verbo('tener', 'have', 'tiene', 'has').
-verbo('hablar', 'speak', 'habla', 'speaks').
-verbo('comer', 'eat', 'come', 'eats').
-verbo('beber', 'drink', 'bebe', 'drinks').
-verbo('correr', 'run', 'corre', 'runs').
-verbo('caminar', 'walk', 'camina', 'walks').
-verbo('leer', 'read', 'lee', 'reads').
-verbo('escribir', 'write', 'escribe', 'writes').
-verbo('estudiar', 'study', 'estudia', 'studies').
-verbo('trabajar', 'work', 'trabaja', 'works').
-verbo('vivir', 'live', 'vive', 'lives').
-verbo('amar', 'love', 'ama', 'loves').
-verbo('querer', 'want', 'quiere', 'wants').
-verbo('poder', 'can', 'puede', 'can').
-verbo('hacer', 'do', 'hace', 'does').
-verbo('decir', 'say', 'dice', 'says').
-verbo('ir', 'go', 'va', 'goes').
-verbo('ver', 'see', 've', 'sees').
-verbo('venir', 'come', 'viene', 'comes').
-verbo('saber', 'know', 'sabe', 'knows').
-verbo('pensar', 'think', 'piensa', 'thinks').
-verbo('mirar', 'look', 'mira', 'looks').
-verbo('usar', 'use', 'usa', 'uses').
-verbo('encontrar', 'find', 'encuentra', 'finds').
-verbo('dar', 'give', 'da', 'gives').
-verbo('contar', 'tell', 'cuenta', 'tells').
-verbo('pedir', 'ask', 'pide', 'asks').
-verbo('trabajar', 'work', 'trabaja', 'works').
-verbo('parecer', 'seem', 'parece', 'seems').
-verbo('sentir', 'feel', 'siente', 'feels').
-verbo('tratar', 'try', 'trata', 'tries').
-verbo('dejar', 'leave', 'deja', 'leaves').
-verbo('llamar', 'call', 'llama', 'calls').
-verbo('necesitar', 'need', 'necesita', 'needs').
-verbo('cambiar', 'change', 'cambia', 'changes').
-verbo('jugar', 'play', 'juega', 'plays').
-verbo('creer', 'believe', 'cree', 'believes').
-verbo('seguir', 'follow', 'sigue', 'follows').
-verbo('empezar', 'start', 'empieza', 'starts').
-verbo('terminar', 'finish', 'termina', 'finishes').
-verbo('entender', 'understand', 'entiende', 'understands').
-verbo('recordar', 'remember', 'recuerda', 'remembers').
-verbo('esperar', 'wait', 'espera', 'waits').
-verbo('ayudar', 'help', 'ayuda', 'helps').
-verbo('mover', 'move', 'mueve', 'moves').
-verbo('ganar', 'win', 'gana', 'wins').
-verbo('perder', 'lose', 'pierde', 'loses').
-verbo('comprar', 'buy', 'compra', 'buys').
-verbo('vender', 'sell', 'vende', 'sells').
-verbo('pagar', 'pay', 'paga', 'pays').
-verbo('costar', 'cost', 'cuesta', 'costs').
-verbo('guardar', 'save', 'guarda', 'saves').
-
-verbo('abrir', 'open', 'abre', 'opens').
-verbo('cerrar', 'close', 'cierra', 'closes').
-verbo('levantar', 'lift', 'levanta', 'lifts').
-verbo('bajar', 'lower', 'baja', 'lowers').
-verbo('construir', 'build', 'construye', 'builds').
-verbo('crear', 'create', 'crea', 'creates').
-verbo('destruir', 'destroy', 'destruye', 'destroys').
-verbo('aprender', 'learn', 'aprende', 'learns').
-verbo('enseñar', 'teach', 'enseña', 'teaches').
-verbo('explicar', 'explain', 'explica', 'explains').
-verbo('mostrar', 'show', 'muestra', 'shows').
-verbo('escuchar', 'listen', 'escucha', 'listens').
-verbo('hablar', 'talk', 'habla', 'talks').
-verbo('cantar', 'sing', 'canta', 'sings').
-verbo('bailar', 'dance', 'baila', 'dances').
-verbo('reír', 'laugh', 'ríe', 'laughs').
-verbo('llorar', 'cry', 'llora', 'cries').
-verbo('dormir', 'sleep', 'duerme', 'sleeps').
-verbo('despertar', 'wake', 'despierta', 'wakes').
-verbo('cocinar', 'cook', 'cocina', 'cooks').
-verbo('limpiar', 'clean', 'limpia', 'cleans').
-verbo('lavar', 'wash', 'lava', 'washes').
-verbo('planchar', 'iron', 'plancha', 'irons').
-verbo('conducir', 'drive', 'conduce', 'drives').
-verbo('viajar', 'travel', 'viaja', 'travels').
-verbo('visitar', 'visit', 'visita', 'visits').
-verbo('invitar', 'invite', 'invita', 'invites').
-verbo('recibir', 'receive', 'recibe', 'receives').
-verbo('enviar', 'send', 'envía', 'sends').
-verbo('llevar', 'carry', 'lleva', 'carries').
-verbo('traer', 'bring', 'trae', 'brings').
-verbo('tomar', 'take', 'toma', 'takes').
-verbo('poner', 'put', 'pone', 'puts').
-verbo('mantener', 'keep', 'mantiene', 'keeps').
-verbo('permitir', 'allow', 'permite', 'allows').
-verbo('evitar', 'avoid', 'evita', 'avoids').
-verbo('elegir', 'choose', 'elige', 'chooses').
-verbo('decidir', 'decide', 'decide', 'decides').
+% verbo(InfinitivoEsp, InfinitivoEng, [ConjugacionesEsp], [ConjugacionesEng])
+verbo('ser', 'be', ['soy', 'eres', 'es', 'somos', 'sois', 'son'], ['am', 'are', 'is', 'are', 'are', 'are']).
+verbo('tener', 'have', ['tengo', 'tienes', 'tiene', 'tenemos', 'tenéis', 'tienen'], ['have']).
+verbo('hablar', 'speak', ['hablo', 'hablas', 'habla', 'hablamos', 'habláis', 'hablan'], ['speak','speaks']).
+verbo('comer', 'eat', ['como', 'comes', 'come', 'comemos', 'coméis', 'comen'], ['eat', 'eat', 'eats', 'eat', 'eat', 'eat']).
+verbo('beber', 'drink', ['bebo', 'bebes', 'bebe', 'bebemos', 'bebéis', 'beben'], ['drink', 'drink', 'drinks', 'drink', 'drink', 'drink']).
+verbo('correr', 'run', ['corro', 'corres', 'corre', 'corremos', 'corréis', 'corren'], ['run', 'run', 'runs', 'run', 'run', 'run']).
+verbo('caminar', 'walk', ['camino', 'caminas', 'camina', 'caminamos', 'camináis', 'caminan'], ['walk', 'walk', 'walks', 'walk', 'walk', 'walk']).
+verbo('leer', 'read', ['leo', 'lees', 'lee', 'leemos', 'leéis', 'leen'], ['read', 'read', 'reads', 'read', 'read', 'read']).
+verbo('escribir', 'write', ['escribo', 'escribes', 'escribe', 'escribimos', 'escribís', 'escriben'], ['write', 'write', 'writes', 'write', 'write', 'write']).
+verbo('estudiar', 'study', ['estudio', 'estudias', 'estudia', 'estudiamos', 'estudiáis', 'estudian'], ['study', 'study', 'studies', 'study', 'study', 'study']).
+verbo('trabajar', 'work', ['trabajo', 'trabajas', 'trabaja', 'trabajamos', 'trabajáis', 'trabajan'], ['work', 'work', 'works', 'work', 'work', 'work']).
+verbo('vivir', 'live', ['vivo', 'vives', 'vive', 'vivimos', 'vivís', 'viven'], ['live', 'live', 'lives', 'live', 'live', 'live']).
+verbo('amar', 'love', ['amo', 'amas', 'ama', 'amamos', 'amáis', 'aman'], ['love', 'love', 'loves', 'love', 'love', 'love']).
+verbo('querer', 'want', ['quiero', 'quieres', 'quiere', 'queremos', 'queréis', 'quieren'], ['want', 'want', 'wants', 'want', 'want', 'want']).
+verbo('poder', 'can', ['puedo', 'puedes', 'puede', 'podemos', 'podéis', 'pueden'], ['can', 'can', 'can', 'can', 'can', 'can']).
+verbo('hacer', 'do', ['hago', 'haces', 'hace', 'hacemos', 'hacéis', 'hacen'], ['do', 'do', 'does', 'do', 'do', 'do']).
+verbo('decir', 'say', ['digo', 'dices', 'dice', 'decimos', 'decís', 'dicen'], ['say', 'say', 'says', 'say', 'say', 'say']).
+verbo('ir', 'go', ['voy', 'vas', 'va', 'vamos', 'vais', 'van'], ['go', 'go', 'goes', 'go', 'go', 'go']).
+verbo('ver', 'see', ['veo', 'ves', 've', 'vemos', 'veis', 'ven'], ['see', 'see', 'sees', 'see', 'see', 'see']).
+verbo('venir', 'come', ['vengo', 'vienes', 'viene', 'venimos', 'venís', 'vienen'], ['come', 'come', 'comes', 'come', 'come', 'come']).
+verbo('saber', 'know', ['sé', 'sabes', 'sabe', 'sabemos', 'sabéis', 'saben'], ['know', 'know', 'knows', 'know', 'know', 'know']).
+verbo('pensar', 'think', ['pienso', 'piensas', 'piensa', 'pensamos', 'pensáis', 'piensan'], ['think', 'think', 'thinks', 'think', 'think', 'think']).
+verbo('mirar', 'look', ['miro', 'miras', 'mira', 'miramos', 'miráis', 'miran'], ['look', 'look', 'looks', 'look', 'look', 'look']).
+verbo('usar', 'use', ['uso', 'usas', 'usa', 'usamos', 'usáis', 'usan'], ['use', 'use', 'uses', 'use', 'use', 'use']).
+verbo('encontrar', 'find', ['encuentro', 'encuentras', 'encuentra', 'encontramos', 'encontráis', 'encuentran'], ['find', 'find', 'finds', 'find', 'find', 'find']).
+verbo('dar', 'give', ['doy', 'das', 'da', 'damos', 'dais', 'dan'], ['give', 'give', 'gives', 'give', 'give', 'give']).
+verbo('contar', 'tell', ['cuento', 'cuentas', 'cuenta', 'contamos', 'contáis', 'cuentan'], ['tell', 'tell', 'tells', 'tell', 'tell', 'tell']).
+verbo('pedir', 'ask', ['pido', 'pides', 'pide', 'pedimos', 'pedís', 'piden'], ['ask', 'ask', 'asks', 'ask', 'ask', 'ask']).
+verbo('parecer', 'seem', ['parezco', 'pareces', 'parece', 'parecemos', 'parecéis', 'parecen'], ['seem', 'seem', 'seems', 'seem', 'seem', 'seem']).
+verbo('sentir', 'feel', ['siento', 'sientes', 'siente', 'sentimos', 'sentís', 'sienten'], ['feel', 'feel', 'feels', 'feel', 'feel', 'feel']).
+verbo('tratar', 'try', ['trato', 'tratas', 'trata', 'tratamos', 'tratáis', 'tratan'], ['try', 'try', 'tries', 'try', 'try', 'try']).
+verbo('dejar', 'leave', ['dejo', 'dejas', 'deja', 'dejamos', 'dejáis', 'dejan'], ['leave', 'leave', 'leaves', 'leave', 'leave', 'leave']).
+verbo('llamar', 'call', ['llamo', 'llamas', 'llama', 'llamamos', 'llamáis', 'llaman'], ['call', 'call', 'calls', 'call', 'call', 'call']).
+verbo('necesitar', 'need', ['necesito', 'necesitas', 'necesita', 'necesitamos', 'necesitáis', 'necesitan'], ['need', 'need', 'needs', 'need', 'need', 'need']).
+verbo('cambiar', 'change', ['cambio', 'cambias', 'cambia', 'cambiamos', 'cambiáis', 'cambian'], ['change', 'change', 'changes', 'change', 'change', 'change']).
+verbo('jugar', 'play', ['juego', 'juegas', 'juega', 'jugamos', 'jugáis', 'juegan'], ['play', 'play', 'plays', 'play', 'play', 'play']).
+verbo('creer', 'believe', ['creo', 'crees', 'cree', 'creemos', 'creéis', 'creen'], ['believe', 'believe', 'believes', 'believe', 'believe', 'believe']).
+verbo('seguir', 'follow', ['sigo', 'sigues', 'sigue', 'seguimos', 'seguís', 'siguen'], ['follow', 'follow', 'follows', 'follow', 'follow', 'follow']).
+verbo('empezar', 'start', ['empiezo', 'empiezas', 'empieza', 'empezamos', 'empezáis', 'empiezan'], ['start', 'start', 'starts', 'start', 'start', 'start']).
+verbo('terminar', 'finish', ['termino', 'terminas', 'termina', 'terminamos', 'termináis', 'terminan'], ['finish', 'finish', 'finishes', 'finish', 'finish', 'finish']).
+verbo('entender', 'understand', ['entiendo', 'entiendes', 'entiende', 'entendemos', 'entendéis', 'entienden'], ['understand', 'understand', 'understands', 'understand', 'understand', 'understand']).
+verbo('recordar', 'remember', ['recuerdo', 'recuerdas', 'recuerda', 'recordamos', 'recordáis', 'recuerdan'], ['remember', 'remember', 'remembers', 'remember', 'remember', 'remember']).
+verbo('esperar', 'wait', ['espero', 'esperas', 'espera', 'esperamos', 'esperáis', 'esperan'], ['wait', 'wait', 'waits', 'wait', 'wait', 'wait']).
+verbo('ayudar', 'help', ['ayudo', 'ayudas', 'ayuda', 'ayudamos', 'ayudáis', 'ayudan'], ['help', 'help', 'helps', 'help', 'help', 'help']).
+verbo('mover', 'move', ['muevo', 'mueves', 'mueve', 'movemos', 'movéis', 'mueven'], ['move', 'move', 'moves', 'move', 'move', 'move']).
+verbo('ganar', 'win', ['gano', 'ganas', 'gana', 'ganamos', 'ganáis', 'ganan'], ['win', 'win', 'wins', 'win', 'win', 'win']).
+verbo('perder', 'lose', ['pierdo', 'pierdes', 'pierde', 'perdemos', 'perdéis', 'pierden'], ['lose', 'lose', 'loses', 'lose', 'lose', 'lose']).
+verbo('comprar', 'buy', ['compro', 'compras', 'compra', 'compramos', 'compráis', 'compran'], ['buy', 'buy', 'buys', 'buy', 'buy', 'buy']).
+verbo('vender', 'sell', ['vendo', 'vendes', 'vende', 'vendemos', 'vendéis', 'venden'], ['sell', 'sell', 'sells', 'sell', 'sell', 'sell']).
+verbo('pagar', 'pay', ['pago', 'pagas', 'paga', 'pagamos', 'pagáis', 'pagan'], ['pay', 'pay', 'pays', 'pay', 'pay', 'pay']).
+verbo('costar', 'cost', ['cuesto', 'cuestas', 'cuesta', 'costamos', 'costáis', 'cuestan'], ['cost', 'cost', 'costs', 'cost', 'cost', 'cost']).
+verbo('guardar', 'save', ['guardo', 'guardas', 'guarda', 'guardamos', 'guardáis', 'guardan'], ['save', 'save', 'saves', 'save', 'save', 'save']).
+verbo('abrir', 'open', ['abro', 'abres', 'abre', 'abrimos', 'abríis', 'abren'], ['open', 'open', 'opens', 'open', 'open', 'open']).
+verbo('cerrar', 'close', ['cierro', 'cierras', 'cierra', 'cerramos', 'cerráis', 'cierran'], ['close', 'close', 'closes', 'close', 'close', 'close']).
+verbo('levantar', 'lift', ['levanto', 'levantas', 'levanta', 'levantamos', 'levantáis', 'levantan'], ['lift', 'lift', 'lifts', 'lift', 'lift', 'lift']).
+verbo('bajar', 'lower', ['bajo', 'bajas', 'baja', 'bajamos', 'bajáis', 'bajan'], ['lower', 'lower', 'lowers', 'lower', 'lower', 'lower']).
+verbo('construir', 'build', ['construyo', 'construyes', 'construye', 'construimos', 'construís', 'construyen'], ['build', 'build', 'builds', 'build', 'build', 'build']).
+verbo('crear', 'create', ['creo', 'creas', 'crea', 'creamos', 'creáis', 'crean'], ['create', 'create', 'creates', 'create', 'create', 'create']).
+verbo('destruir', 'destroy', ['destruyo', 'destruyes', 'destruye', 'destruimos', 'destruís', 'destruyen'], ['destroy', 'destroy', 'destroys']).
+verbo('aprender', 'learn', ['aprendo', 'aprendes', 'aprende', 'aprendemos', 'aprendéis', 'aprenden'], ['learn', 'learn', 'learns']).
+verbo('enseñar', 'teach', ['enseño', 'enseñas', 'enseña', 'enseñamos', 'enseñáis', 'enseñan'], ['teach', 'teach', 'teaches']).
+verbo('explicar', 'explain', ['explico', 'explicas', 'explica', 'explicamos', 'explicáis', 'explican'], ['explain', 'explain', 'explains']).
+verbo('mostrar', 'show', ['muestro', 'muestras', 'muestra', 'mostramos', 'mostráis', 'muestran'], ['show', 'show', 'shows']).
+verbo('escuchar', 'listen', ['escucho', 'escuchas', 'escucha', 'escuchamos', 'escucháis', 'escuchan'], ['listen', 'listen', 'listens']).
+verbo('cantar', 'sing', ['canto', 'cantas', 'canta', 'cantamos', 'cantáis', 'cantan'], ['sing', 'sing', 'sings']).
+verbo('bailar', 'dance', ['bailo', 'bailas', 'baila', 'bailamos', 'bailáis', 'bailan'], ['dance', 'dance', 'dances']).
+verbo('reír', 'laugh', ['río', 'ríes', 'ríe', 'reímos', 'reís', 'ríen'], ['laugh', 'laugh', 'laughs']).
+verbo('llorar', 'cry', ['lloro', 'lloras', 'llora', 'lloramos', 'lloráis', 'lloran'], ['cry', 'cry', 'cries']).
+verbo('dormir', 'sleep', ['duermo', 'duermes', 'duerme', 'dormimos', 'dormís', 'duermen'], ['sleep', 'sleep', 'sleeps']).
+verbo('despertar', 'wake', ['despierto', 'despiertas', 'despierta', 'despertamos', 'despertáis', 'despiertan'], ['wake', 'wake', 'wakes']).
+verbo('cocinar', 'cook', ['cocino', 'cocinas', 'cocina', 'cocinamos', 'cocináis', 'cocinan'], ['cook', 'cook', 'cooks']).
+verbo('limpiar', 'clean', ['limpio', 'limpias', 'limpia', 'limpiamos', 'limpiáis', 'limpian'], ['clean', 'clean', 'cleans']).
+verbo('lavar', 'wash', ['lavo', 'lavas', 'lava', 'lavamos', 'laváis', 'lavan'], ['wash', 'wash', 'washes']).
+verbo('planchar', 'iron', ['plancho', 'planchas', 'plancha', 'planchamos', 'plancháis', 'planchan'], ['iron', 'iron', 'irons']).
+verbo('conducir', 'drive', ['conduzco', 'conduces', 'conduce', 'conducimos', 'conducís', 'conducen'], ['drive', 'drive', 'drives']).
+verbo('viajar', 'travel', ['viajo', 'viajas', 'viaja', 'viajamos', 'viajáis', 'viajan'], ['travel', 'travel', 'travels']).
+verbo('visitar', 'visit', ['visito', 'visitas', 'visita', 'visitamos', 'visitáis', 'visitan'], ['visit', 'visit', 'visits']).
+verbo('invitar', 'invite', ['invito', 'invitas', 'invita', 'invitamos', 'invitáis', 'invitan'], ['invite', 'invite', 'invites']).
+verbo('recibir', 'receive', ['recibo', 'recibes', 'recibe', 'recibimos', 'recibís', 'reciben'], ['receive', 'receive', 'receives']).
+verbo('enviar', 'send', ['envío', 'envías', 'envía', 'enviamos', 'enviáis', 'envían'], ['send', 'send', 'sends']).
+verbo('llevar', 'carry', ['llevo', 'llevas', 'lleva', 'llevamos', 'lleváis', 'llevan'], ['carry', 'carry', 'carries']).
+verbo('traer', 'bring', ['traigo', 'traes', 'trae', 'traemos', 'traéis', 'traen'], ['bring', 'bring', 'brings']).
+verbo('tomar', 'take', ['tomo', 'tomas', 'toma', 'tomamos', 'tomáis', 'toman'], ['take', 'take', 'takes']).
+verbo('poner', 'put', ['pongo', 'pones', 'pone', 'ponemos', 'ponéis', 'ponen'], ['put', 'put', 'puts']).
+verbo('mantener', 'keep', ['mantengo', 'mantienes', 'mantiene', 'mantenemos', 'mantenéis', 'mantienen'], ['keep', 'keep', 'keeps']).
+verbo('permitir', 'allow', ['permito', 'permites', 'permite', 'permitimos', 'permitís', 'permiten'], ['allow', 'allow', 'allows']).
+verbo('evitar', 'avoid', ['evito', 'evitas', 'evita', 'evitamos', 'evitáis', 'evitan'], ['avoid','avoids']).
+verbo('elegir', 'choose', ['elijo', 'eliges', 'elige', 'elegimos', 'elegís', 'eligen'], ['choose', 'chooses']).
+verbo('decidir', 'decide', ['decido', 'decides', 'decide', 'decidimos', 'decidís', 'deciden'], ['decide', 'decides']).
 
 % === ADJETIVOS (invariables en número) ===
 % adjetivo(Español, Inglés)
@@ -520,7 +517,7 @@ pronombre('ellas', 'they', 'tercera', 'plural').
 
 % Pronombres reflexivos
 pronombre('mí', 'me', 'primera', 'singular').
-pronombre('ti', 'you', 'segunda', 'singular').
+pronombre('tu', 'you', 'segunda', 'singular').
 pronombre('sí', 'himself', 'tercera', 'singular').
 pronombre('sí', 'herself', 'tercera', 'singular').
 pronombre('sí', 'itself', 'tercera', 'singular').
