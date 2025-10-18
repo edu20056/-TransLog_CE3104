@@ -81,6 +81,7 @@ interjeccion('ladrón', 'thief').
 interjeccion('policía', 'police').
 
 % Sustantivos (español, inglés, tipo)
+% Sustantivos(español, inglés, singular/plural)
 sustantivo('niño', 'boy', 'singular').
 sustantivo('niños', 'boys', 'plural').
 sustantivo('niña', 'girl', 'singular').
@@ -223,204 +224,332 @@ sustantivo('libro', 'book', 'singular').
 sustantivo('libros', 'books', 'plural').
 
 % === VERBOS ===
-% verbo(InfinitivoEsp, InfinitivoEng, [ConjugacionesEsp], [ConjugacionesEng])
-verbo('ser', 'be', ['soy', 'eres', 'es', 'somos', 'sois', 'son'], ['am', 'are', 'is', 'are', 'are', 'are']).
+% Verbo(InfinitivoEsp, InfinitivoEng, [conjugaciones_esp], [conjugaciones_ing])
+verbo('ser', 'be', ['soy', 'eres', 'es', 'somos', 'sois', 'son'], ['am', 'are', 'is', 'are']).
 verbo('tener', 'have', ['tengo', 'tienes', 'tiene', 'tenemos', 'tenéis', 'tienen'], ['have']).
 verbo('hablar', 'speak', ['hablo', 'hablas', 'habla', 'hablamos', 'habláis', 'hablan'], ['speak','speaks']).
-verbo('comer', 'eat', ['como', 'comes', 'come', 'comemos', 'coméis', 'comen'], ['eat', 'eat', 'eats', 'eat', 'eat', 'eat']).
-verbo('beber', 'drink', ['bebo', 'bebes', 'bebe', 'bebemos', 'bebéis', 'beben'], ['drink', 'drink', 'drinks', 'drink', 'drink', 'drink']).
-verbo('correr', 'run', ['corro', 'corres', 'corre', 'corremos', 'corréis', 'corren'], ['run', 'run', 'runs', 'run', 'run', 'run']).
-verbo('caminar', 'walk', ['camino', 'caminas', 'camina', 'caminamos', 'camináis', 'caminan'], ['walk', 'walk', 'walks', 'walk', 'walk', 'walk']).
-verbo('leer', 'read', ['leo', 'lees', 'lee', 'leemos', 'leéis', 'leen'], ['read', 'read', 'reads', 'read', 'read', 'read']).
-verbo('escribir', 'write', ['escribo', 'escribes', 'escribe', 'escribimos', 'escribís', 'escriben'], ['write', 'write', 'writes', 'write', 'write', 'write']).
-verbo('estudiar', 'study', ['estudio', 'estudias', 'estudia', 'estudiamos', 'estudiáis', 'estudian'], ['study', 'study', 'studies', 'study', 'study', 'study']).
-verbo('trabajar', 'work', ['trabajo', 'trabajas', 'trabaja', 'trabajamos', 'trabajáis', 'trabajan'], ['work', 'work', 'works', 'work', 'work', 'work']).
-verbo('vivir', 'live', ['vivo', 'vives', 'vive', 'vivimos', 'vivís', 'viven'], ['live', 'live', 'lives', 'live', 'live', 'live']).
-verbo('amar', 'love', ['amo', 'amas', 'ama', 'amamos', 'amáis', 'aman'], ['love', 'love', 'loves', 'love', 'love', 'love']).
-verbo('querer', 'want', ['quiero', 'quieres', 'quiere', 'queremos', 'queréis', 'quieren'], ['want', 'want', 'wants', 'want', 'want', 'want']).
-verbo('poder', 'can', ['puedo', 'puedes', 'puede', 'podemos', 'podéis', 'pueden'], ['can', 'can', 'can', 'can', 'can', 'can']).
-verbo('hacer', 'do', ['hago', 'haces', 'hace', 'hacemos', 'hacéis', 'hacen'], ['do', 'do', 'does', 'do', 'do', 'do']).
-verbo('decir', 'say', ['digo', 'dices', 'dice', 'decimos', 'decís', 'dicen'], ['say', 'say', 'says', 'say', 'say', 'say']).
-verbo('ir', 'go', ['voy', 'vas', 'va', 'vamos', 'vais', 'van'], ['go', 'go', 'goes', 'go', 'go', 'go']).
-verbo('ver', 'see', ['veo', 'ves', 've', 'vemos', 'veis', 'ven'], ['see', 'see', 'sees', 'see', 'see', 'see']).
-verbo('venir', 'come', ['vengo', 'vienes', 'viene', 'venimos', 'venís', 'vienen'], ['come', 'come', 'comes', 'come', 'come', 'come']).
-verbo('saber', 'know', ['sé', 'sabes', 'sabe', 'sabemos', 'sabéis', 'saben'], ['know', 'know', 'knows', 'know', 'know', 'know']).
-verbo('pensar', 'think', ['pienso', 'piensas', 'piensa', 'pensamos', 'pensáis', 'piensan'], ['think', 'think', 'thinks', 'think', 'think', 'think']).
-verbo('mirar', 'look', ['miro', 'miras', 'mira', 'miramos', 'miráis', 'miran'], ['look', 'look', 'looks', 'look', 'look', 'look']).
-verbo('usar', 'use', ['uso', 'usas', 'usa', 'usamos', 'usáis', 'usan'], ['use', 'use', 'uses', 'use', 'use', 'use']).
-verbo('encontrar', 'find', ['encuentro', 'encuentras', 'encuentra', 'encontramos', 'encontráis', 'encuentran'], ['find', 'find', 'finds', 'find', 'find', 'find']).
-verbo('dar', 'give', ['doy', 'das', 'da', 'damos', 'dais', 'dan'], ['give', 'give', 'gives', 'give', 'give', 'give']).
-verbo('contar', 'tell', ['cuento', 'cuentas', 'cuenta', 'contamos', 'contáis', 'cuentan'], ['tell', 'tell', 'tells', 'tell', 'tell', 'tell']).
-verbo('pedir', 'ask', ['pido', 'pides', 'pide', 'pedimos', 'pedís', 'piden'], ['ask', 'ask', 'asks', 'ask', 'ask', 'ask']).
-verbo('parecer', 'seem', ['parezco', 'pareces', 'parece', 'parecemos', 'parecéis', 'parecen'], ['seem', 'seem', 'seems', 'seem', 'seem', 'seem']).
-verbo('sentir', 'feel', ['siento', 'sientes', 'siente', 'sentimos', 'sentís', 'sienten'], ['feel', 'feel', 'feels', 'feel', 'feel', 'feel']).
-verbo('tratar', 'try', ['trato', 'tratas', 'trata', 'tratamos', 'tratáis', 'tratan'], ['try', 'try', 'tries', 'try', 'try', 'try']).
-verbo('dejar', 'leave', ['dejo', 'dejas', 'deja', 'dejamos', 'dejáis', 'dejan'], ['leave', 'leave', 'leaves', 'leave', 'leave', 'leave']).
-verbo('llamar', 'call', ['llamo', 'llamas', 'llama', 'llamamos', 'llamáis', 'llaman'], ['call', 'call', 'calls', 'call', 'call', 'call']).
-verbo('necesitar', 'need', ['necesito', 'necesitas', 'necesita', 'necesitamos', 'necesitáis', 'necesitan'], ['need', 'need', 'needs', 'need', 'need', 'need']).
-verbo('cambiar', 'change', ['cambio', 'cambias', 'cambia', 'cambiamos', 'cambiáis', 'cambian'], ['change', 'change', 'changes', 'change', 'change', 'change']).
-verbo('jugar', 'play', ['juego', 'juegas', 'juega', 'jugamos', 'jugáis', 'juegan'], ['play', 'play', 'plays', 'play', 'play', 'play']).
-verbo('creer', 'believe', ['creo', 'crees', 'cree', 'creemos', 'creéis', 'creen'], ['believe', 'believe', 'believes', 'believe', 'believe', 'believe']).
-verbo('seguir', 'follow', ['sigo', 'sigues', 'sigue', 'seguimos', 'seguís', 'siguen'], ['follow', 'follow', 'follows', 'follow', 'follow', 'follow']).
-verbo('empezar', 'start', ['empiezo', 'empiezas', 'empieza', 'empezamos', 'empezáis', 'empiezan'], ['start', 'start', 'starts', 'start', 'start', 'start']).
-verbo('terminar', 'finish', ['termino', 'terminas', 'termina', 'terminamos', 'termináis', 'terminan'], ['finish', 'finish', 'finishes', 'finish', 'finish', 'finish']).
-verbo('entender', 'understand', ['entiendo', 'entiendes', 'entiende', 'entendemos', 'entendéis', 'entienden'], ['understand', 'understand', 'understands', 'understand', 'understand', 'understand']).
-verbo('recordar', 'remember', ['recuerdo', 'recuerdas', 'recuerda', 'recordamos', 'recordáis', 'recuerdan'], ['remember', 'remember', 'remembers', 'remember', 'remember', 'remember']).
-verbo('esperar', 'wait', ['espero', 'esperas', 'espera', 'esperamos', 'esperáis', 'esperan'], ['wait', 'wait', 'waits', 'wait', 'wait', 'wait']).
-verbo('ayudar', 'help', ['ayudo', 'ayudas', 'ayuda', 'ayudamos', 'ayudáis', 'ayudan'], ['help', 'help', 'helps', 'help', 'help', 'help']).
-verbo('mover', 'move', ['muevo', 'mueves', 'mueve', 'movemos', 'movéis', 'mueven'], ['move', 'move', 'moves', 'move', 'move', 'move']).
-verbo('ganar', 'win', ['gano', 'ganas', 'gana', 'ganamos', 'ganáis', 'ganan'], ['win', 'win', 'wins', 'win', 'win', 'win']).
-verbo('perder', 'lose', ['pierdo', 'pierdes', 'pierde', 'perdemos', 'perdéis', 'pierden'], ['lose', 'lose', 'loses', 'lose', 'lose', 'lose']).
-verbo('comprar', 'buy', ['compro', 'compras', 'compra', 'compramos', 'compráis', 'compran'], ['buy', 'buy', 'buys', 'buy', 'buy', 'buy']).
-verbo('vender', 'sell', ['vendo', 'vendes', 'vende', 'vendemos', 'vendéis', 'venden'], ['sell', 'sell', 'sells', 'sell', 'sell', 'sell']).
-verbo('pagar', 'pay', ['pago', 'pagas', 'paga', 'pagamos', 'pagáis', 'pagan'], ['pay', 'pay', 'pays', 'pay', 'pay', 'pay']).
-verbo('costar', 'cost', ['cuesto', 'cuestas', 'cuesta', 'costamos', 'costáis', 'cuestan'], ['cost', 'cost', 'costs', 'cost', 'cost', 'cost']).
-verbo('guardar', 'save', ['guardo', 'guardas', 'guarda', 'guardamos', 'guardáis', 'guardan'], ['save', 'save', 'saves', 'save', 'save', 'save']).
-verbo('abrir', 'open', ['abro', 'abres', 'abre', 'abrimos', 'abríis', 'abren'], ['open', 'open', 'opens', 'open', 'open', 'open']).
-verbo('cerrar', 'close', ['cierro', 'cierras', 'cierra', 'cerramos', 'cerráis', 'cierran'], ['close', 'close', 'closes', 'close', 'close', 'close']).
-verbo('levantar', 'lift', ['levanto', 'levantas', 'levanta', 'levantamos', 'levantáis', 'levantan'], ['lift', 'lift', 'lifts', 'lift', 'lift', 'lift']).
-verbo('bajar', 'lower', ['bajo', 'bajas', 'baja', 'bajamos', 'bajáis', 'bajan'], ['lower', 'lower', 'lowers', 'lower', 'lower', 'lower']).
-verbo('construir', 'build', ['construyo', 'construyes', 'construye', 'construimos', 'construís', 'construyen'], ['build', 'build', 'builds', 'build', 'build', 'build']).
-verbo('crear', 'create', ['creo', 'creas', 'crea', 'creamos', 'creáis', 'crean'], ['create', 'create', 'creates', 'create', 'create', 'create']).
-verbo('destruir', 'destroy', ['destruyo', 'destruyes', 'destruye', 'destruimos', 'destruís', 'destruyen'], ['destroy', 'destroy', 'destroys']).
-verbo('aprender', 'learn', ['aprendo', 'aprendes', 'aprende', 'aprendemos', 'aprendéis', 'aprenden'], ['learn', 'learn', 'learns']).
-verbo('enseñar', 'teach', ['enseño', 'enseñas', 'enseña', 'enseñamos', 'enseñáis', 'enseñan'], ['teach', 'teach', 'teaches']).
-verbo('explicar', 'explain', ['explico', 'explicas', 'explica', 'explicamos', 'explicáis', 'explican'], ['explain', 'explain', 'explains']).
-verbo('mostrar', 'show', ['muestro', 'muestras', 'muestra', 'mostramos', 'mostráis', 'muestran'], ['show', 'show', 'shows']).
-verbo('escuchar', 'listen', ['escucho', 'escuchas', 'escucha', 'escuchamos', 'escucháis', 'escuchan'], ['listen', 'listen', 'listens']).
-verbo('cantar', 'sing', ['canto', 'cantas', 'canta', 'cantamos', 'cantáis', 'cantan'], ['sing', 'sing', 'sings']).
-verbo('bailar', 'dance', ['bailo', 'bailas', 'baila', 'bailamos', 'bailáis', 'bailan'], ['dance', 'dance', 'dances']).
-verbo('reír', 'laugh', ['río', 'ríes', 'ríe', 'reímos', 'reís', 'ríen'], ['laugh', 'laugh', 'laughs']).
-verbo('llorar', 'cry', ['lloro', 'lloras', 'llora', 'lloramos', 'lloráis', 'lloran'], ['cry', 'cry', 'cries']).
-verbo('dormir', 'sleep', ['duermo', 'duermes', 'duerme', 'dormimos', 'dormís', 'duermen'], ['sleep', 'sleep', 'sleeps']).
-verbo('despertar', 'wake', ['despierto', 'despiertas', 'despierta', 'despertamos', 'despertáis', 'despiertan'], ['wake', 'wake', 'wakes']).
-verbo('cocinar', 'cook', ['cocino', 'cocinas', 'cocina', 'cocinamos', 'cocináis', 'cocinan'], ['cook', 'cook', 'cooks']).
-verbo('limpiar', 'clean', ['limpio', 'limpias', 'limpia', 'limpiamos', 'limpiáis', 'limpian'], ['clean', 'clean', 'cleans']).
-verbo('lavar', 'wash', ['lavo', 'lavas', 'lava', 'lavamos', 'laváis', 'lavan'], ['wash', 'wash', 'washes']).
-verbo('planchar', 'iron', ['plancho', 'planchas', 'plancha', 'planchamos', 'plancháis', 'planchan'], ['iron', 'iron', 'irons']).
-verbo('conducir', 'drive', ['conduzco', 'conduces', 'conduce', 'conducimos', 'conducís', 'conducen'], ['drive', 'drive', 'drives']).
-verbo('viajar', 'travel', ['viajo', 'viajas', 'viaja', 'viajamos', 'viajáis', 'viajan'], ['travel', 'travel', 'travels']).
-verbo('visitar', 'visit', ['visito', 'visitas', 'visita', 'visitamos', 'visitáis', 'visitan'], ['visit', 'visit', 'visits']).
-verbo('invitar', 'invite', ['invito', 'invitas', 'invita', 'invitamos', 'invitáis', 'invitan'], ['invite', 'invite', 'invites']).
-verbo('recibir', 'receive', ['recibo', 'recibes', 'recibe', 'recibimos', 'recibís', 'reciben'], ['receive', 'receive', 'receives']).
-verbo('enviar', 'send', ['envío', 'envías', 'envía', 'enviamos', 'enviáis', 'envían'], ['send', 'send', 'sends']).
-verbo('llevar', 'carry', ['llevo', 'llevas', 'lleva', 'llevamos', 'lleváis', 'llevan'], ['carry', 'carry', 'carries']).
-verbo('traer', 'bring', ['traigo', 'traes', 'trae', 'traemos', 'traéis', 'traen'], ['bring', 'bring', 'brings']).
-verbo('tomar', 'take', ['tomo', 'tomas', 'toma', 'tomamos', 'tomáis', 'toman'], ['take', 'take', 'takes']).
-verbo('poner', 'put', ['pongo', 'pones', 'pone', 'ponemos', 'ponéis', 'ponen'], ['put', 'put', 'puts']).
-verbo('mantener', 'keep', ['mantengo', 'mantienes', 'mantiene', 'mantenemos', 'mantenéis', 'mantienen'], ['keep', 'keep', 'keeps']).
-verbo('permitir', 'allow', ['permito', 'permites', 'permite', 'permitimos', 'permitís', 'permiten'], ['allow', 'allow', 'allows']).
+verbo('comer', 'eat', ['como', 'comes', 'come', 'comemos', 'coméis', 'comen'], ['eat', 'eats']).
+verbo('beber', 'drink', ['bebo', 'bebes', 'bebe', 'bebemos', 'bebéis', 'beben'], ['drink','drinks']).
+verbo('correr', 'run', ['corro', 'corres', 'corre', 'corremos', 'corréis', 'corren'], ['run', 'runs']).
+verbo('caminar', 'walk', ['camino', 'caminas', 'camina', 'caminamos', 'camináis', 'caminan'], ['walk', 'walks']).
+verbo('leer', 'read', ['leo', 'lees', 'lee', 'leemos', 'leéis', 'leen'], ['read', 'reads']).
+verbo('escribir', 'write', ['escribo', 'escribes', 'escribe', 'escribimos', 'escribís', 'escriben'], ['write', 'writes']).
+verbo('estudiar', 'study', ['estudio', 'estudias', 'estudia', 'estudiamos', 'estudiáis', 'estudian'], ['study',  'studies']).
+verbo('trabajar', 'work', ['trabajo', 'trabajas', 'trabaja', 'trabajamos', 'trabajáis', 'trabajan'], ['work', 'works']).
+verbo('vivir', 'live', ['vivo', 'vives', 'vive', 'vivimos', 'vivís', 'viven'], ['live', 'lives']).
+verbo('amar', 'love', ['amo', 'amas', 'ama', 'amamos', 'amáis', 'aman'], ['love', 'loves']).
+verbo('querer', 'want', ['quiero', 'quieres', 'quiere', 'queremos', 'queréis', 'quieren'], ['want', 'wants']).
+verbo('poder', 'can', ['puedo', 'puedes', 'puede', 'podemos', 'podéis', 'pueden'], ['can', 'can']).
+verbo('hacer', 'do', ['hago', 'haces', 'hace', 'hacemos', 'hacéis', 'hacen'], ['do', 'does']).
+verbo('decir', 'say', ['digo', 'dices', 'dice', 'decimos', 'decís', 'dicen'], ['say', 'says']).
+verbo('ir', 'go', ['voy', 'vas', 'va', 'vamos', 'vais', 'van'], ['go','goes']).
+verbo('ver', 'see', ['veo', 'ves', 've', 'vemos', 'veis', 'ven'], ['see', 'sees']).
+verbo('venir', 'come', ['vengo', 'vienes', 'viene', 'venimos', 'venís', 'vienen'], ['come','comes']).
+verbo('saber', 'know', ['sé', 'sabes', 'sabe', 'sabemos', 'sabéis', 'saben'], ['know','knows']).
+verbo('pensar', 'think', ['pienso', 'piensas', 'piensa', 'pensamos', 'pensáis', 'piensan'], ['think', 'thinks']).
+verbo('mirar', 'look', ['miro', 'miras', 'mira', 'miramos', 'miráis', 'miran'], ['look', 'looks']).
+verbo('usar', 'use', ['uso', 'usas', 'usa', 'usamos', 'usáis', 'usan'], ['use', 'uses']).
+verbo('encontrar', 'find', ['encuentro', 'encuentras', 'encuentra', 'encontramos', 'encontráis', 'encuentran'], ['find','finds']).
+verbo('dar', 'give', ['doy', 'das', 'da', 'damos', 'dais', 'dan'], ['give', 'gives']).
+verbo('contar', 'tell', ['cuento', 'cuentas', 'cuenta', 'contamos', 'contáis', 'cuentan'], ['tell','tells']).
+verbo('pedir', 'ask', ['pido', 'pides', 'pide', 'pedimos', 'pedís', 'piden'], ['ask','asks']).
+verbo('parecer', 'seem', ['parezco', 'pareces', 'parece', 'parecemos', 'parecéis', 'parecen'], ['seem','seems']).
+verbo('sentir', 'feel', ['siento', 'sientes', 'siente', 'sentimos', 'sentís', 'sienten'], ['feel','feels']).
+verbo('tratar', 'try', ['trato', 'tratas', 'trata', 'tratamos', 'tratáis', 'tratan'], ['try','tries']).
+verbo('dejar', 'leave', ['dejo', 'dejas', 'deja', 'dejamos', 'dejáis', 'dejan'], ['leave', 'leaves']).
+verbo('llamar', 'call', ['llamo', 'llamas', 'llama', 'llamamos', 'llamáis', 'llaman'], ['call','calls']).
+verbo('necesitar', 'need', ['necesito', 'necesitas', 'necesita', 'necesitamos', 'necesitáis', 'necesitan'], ['need', 'needs']).
+verbo('cambiar', 'change', ['cambio', 'cambias', 'cambia', 'cambiamos', 'cambiáis', 'cambian'], ['change', 'changes']).
+verbo('jugar', 'play', ['juego', 'juegas', 'juega', 'jugamos', 'jugáis', 'juegan'], ['play', 'plays']).
+verbo('creer', 'believe', ['creo', 'crees', 'cree', 'creemos', 'creéis', 'creen'], ['believe', 'believes']).
+verbo('seguir', 'follow', ['sigo', 'sigues', 'sigue', 'seguimos', 'seguís', 'siguen'], ['follow', 'follows']).
+verbo('empezar', 'start', ['empiezo', 'empiezas', 'empieza', 'empezamos', 'empezáis', 'empiezan'], ['start', 'starts']).
+verbo('terminar', 'finish', ['termino', 'terminas', 'termina', 'terminamos', 'termináis', 'terminan'], ['finish', 'finishes']).
+verbo('entender', 'understand', ['entiendo', 'entiendes', 'entiende', 'entendemos', 'entendéis', 'entienden'], ['understand', 'understands']).
+verbo('recordar', 'remember', ['recuerdo', 'recuerdas', 'recuerda', 'recordamos', 'recordáis', 'recuerdan'], ['remember', 'remembers']).
+verbo('esperar', 'wait', ['espero', 'esperas', 'espera', 'esperamos', 'esperáis', 'esperan'], ['wait','waits']).
+verbo('ayudar', 'help', ['ayudo', 'ayudas', 'ayuda', 'ayudamos', 'ayudáis', 'ayudan'], [ 'help', 'helps']).
+verbo('mover', 'move', ['muevo', 'mueves', 'mueve', 'movemos', 'movéis', 'mueven'], ['move', 'moves']).
+verbo('ganar', 'win', ['gano', 'ganas', 'gana', 'ganamos', 'ganáis', 'ganan'], ['win', 'wins']).
+verbo('perder', 'lose', ['pierdo', 'pierdes', 'pierde', 'perdemos', 'perdéis', 'pierden'], ['lose', 'loses']).
+verbo('comprar', 'buy', ['compro', 'compras', 'compra', 'compramos', 'compráis', 'compran'], ['buy', 'buys']).
+verbo('vender', 'sell', ['vendo', 'vendes', 'vende', 'vendemos', 'vendéis', 'venden'], ['sell', 'sells']).
+verbo('pagar', 'pay', ['pago', 'pagas', 'paga', 'pagamos', 'pagáis', 'pagan'], ['pay', 'pays']).
+verbo('costar', 'cost', ['cuesto', 'cuestas', 'cuesta', 'costamos', 'costáis', 'cuestan'], ['cost', 'costs']).
+verbo('guardar', 'save', ['guardo', 'guardas', 'guarda', 'guardamos', 'guardáis', 'guardan'], ['save','saves']).
+verbo('abrir', 'open', ['abro', 'abres', 'abre', 'abrimos', 'abríis', 'abren'], ['open', 'opens']).
+verbo('cerrar', 'close', ['cierro', 'cierras', 'cierra', 'cerramos', 'cerráis', 'cierran'], ['close',  'closes']).
+verbo('levantar', 'lift', ['levanto', 'levantas', 'levanta', 'levantamos', 'levantáis', 'levantan'], ['lift', 'lifts']).
+verbo('bajar', 'lower', ['bajo', 'bajas', 'baja', 'bajamos', 'bajáis', 'bajan'], ['lower', 'lowers']).
+verbo('construir', 'build', ['construyo', 'construyes', 'construye', 'construimos', 'construís', 'construyen'], ['build','builds']).
+verbo('crear', 'create', ['creo', 'creas', 'crea', 'creamos', 'creáis', 'crean'], ['create', 'creates']).
+verbo('destruir', 'destroy', ['destruyo', 'destruyes', 'destruye', 'destruimos', 'destruís', 'destruyen'], ['destroy','destroys']).
+verbo('aprender', 'learn', ['aprendo', 'aprendes', 'aprende', 'aprendemos', 'aprendéis', 'aprenden'], ['learn','learns']).
+verbo('enseñar', 'teach', ['enseño', 'enseñas', 'enseña', 'enseñamos', 'enseñáis', 'enseñan'], ['teach','teaches']).
+verbo('explicar', 'explain', ['explico', 'explicas', 'explica', 'explicamos', 'explicáis', 'explican'], ['explain', 'explains']).
+verbo('mostrar', 'show', ['muestro', 'muestras', 'muestra', 'mostramos', 'mostráis', 'muestran'], ['show', 'shows']).
+verbo('escuchar', 'listen', ['escucho', 'escuchas', 'escucha', 'escuchamos', 'escucháis', 'escuchan'], ['listen', 'listens']).
+verbo('cantar', 'sing', ['canto', 'cantas', 'canta', 'cantamos', 'cantáis', 'cantan'], ['sing','sings']).
+verbo('bailar', 'dance', ['bailo', 'bailas', 'baila', 'bailamos', 'bailáis', 'bailan'], ['dance', 'dances']).
+verbo('reír', 'laugh', ['río', 'ríes', 'ríe', 'reímos', 'reís', 'ríen'], ['laugh', 'laughs']).
+verbo('llorar', 'cry', ['lloro', 'lloras', 'llora', 'lloramos', 'lloráis', 'lloran'], ['cry','cries']).
+verbo('dormir', 'sleep', ['duermo', 'duermes', 'duerme', 'dormimos', 'dormís', 'duermen'], ['sleep', 'sleeps']).
+verbo('despertar', 'wake', ['despierto', 'despiertas', 'despierta', 'despertamos', 'despertáis', 'despiertan'], ['wake','wakes']).
+verbo('cocinar', 'cook', ['cocino', 'cocinas', 'cocina', 'cocinamos', 'cocináis', 'cocinan'], ['cook', 'cooks']).
+verbo('limpiar', 'clean', ['limpio', 'limpias', 'limpia', 'limpiamos', 'limpiáis', 'limpian'], ['clean','cleans']).
+verbo('lavar', 'wash', ['lavo', 'lavas', 'lava', 'lavamos', 'laváis', 'lavan'], ['wash', 'washes']).
+verbo('planchar', 'iron', ['plancho', 'planchas', 'plancha', 'planchamos', 'plancháis', 'planchan'], ['iron', 'irons']).
+verbo('conducir', 'drive', ['conduzco', 'conduces', 'conduce', 'conducimos', 'conducís', 'conducen'], ['drive', 'drives']).
+verbo('viajar', 'travel', ['viajo', 'viajas', 'viaja', 'viajamos', 'viajáis', 'viajan'], ['travel', 'travels']).
+verbo('visitar', 'visit', ['visito', 'visitas', 'visita', 'visitamos', 'visitáis', 'visitan'], ['visit', 'visits']).
+verbo('invitar', 'invite', ['invito', 'invitas', 'invita', 'invitamos', 'invitáis', 'invitan'], ['invite', 'invites']).
+verbo('recibir', 'receive', ['recibo', 'recibes', 'recibe', 'recibimos', 'recibís', 'reciben'], ['receive','receives']).
+verbo('enviar', 'send', ['envío', 'envías', 'envía', 'enviamos', 'enviáis', 'envían'], ['send','sends']).
+verbo('llevar', 'carry', ['llevo', 'llevas', 'lleva', 'llevamos', 'lleváis', 'llevan'], ['carry','carries']).
+verbo('traer', 'bring', ['traigo', 'traes', 'trae', 'traemos', 'traéis', 'traen'], ['bring','brings']).
+verbo('tomar', 'take', ['tomo', 'tomas', 'toma', 'tomamos', 'tomáis', 'toman'], ['take''takes']).
+verbo('poner', 'put', ['pongo', 'pones', 'pone', 'ponemos', 'ponéis', 'ponen'], ['put', 'puts']).
+verbo('mantener', 'keep', ['mantengo', 'mantienes', 'mantiene', 'mantenemos', 'mantenéis', 'mantienen'], ['keep','keeps']).
+verbo('permitir', 'allow', ['permito', 'permites', 'permite', 'permitimos', 'permitís', 'permiten'], ['allow', 'allows']).
 verbo('evitar', 'avoid', ['evito', 'evitas', 'evita', 'evitamos', 'evitáis', 'evitan'], ['avoid','avoids']).
 verbo('elegir', 'choose', ['elijo', 'eliges', 'elige', 'elegimos', 'elegís', 'eligen'], ['choose', 'chooses']).
 verbo('decidir', 'decide', ['decido', 'decides', 'decide', 'decidimos', 'decidís', 'deciden'], ['decide', 'decides']).
 
-% === ADJETIVOS (invariables en número) ===
-% adjetivo(Español, Inglés)
-adjetivo('grande', 'big').
-adjetivo('pequeño', 'small').
-adjetivo('inteligente', 'smart').
-adjetivo('bonito', 'beautiful').
-adjetivo('feo', 'ugly').
-adjetivo('rápido', 'fast').
-adjetivo('lento', 'slow').
-adjetivo('feliz', 'happy').
-adjetivo('triste', 'sad').
-adjetivo('rojo', 'red').
-adjetivo('azul', 'blue').
-adjetivo('verde', 'green').
-adjetivo('alto', 'tall').
-adjetivo('bajo', 'short').
-adjetivo('blanco', 'white').
-adjetivo('negro', 'black').
-adjetivo('amarillo', 'yellow').
-adjetivo('naranja', 'orange').
-adjetivo('morado', 'purple').
-adjetivo('rosado', 'pink').
-adjetivo('marrón', 'brown').
-adjetivo('gris', 'gray').
-adjetivo('joven', 'young').
-adjetivo('viejo', 'old').
-adjetivo('nuevo', 'new').
-adjetivo('moderno', 'modern').
-adjetivo('antiguo', 'ancient').
-adjetivo('fuerte', 'strong').
-adjetivo('débil', 'weak').
-adjetivo('duro', 'hard').
-adjetivo('suave', 'soft').
-adjetivo('pesado', 'heavy').
-adjetivo('ligero', 'light').
-adjetivo('caliente', 'hot').
-adjetivo('frío', 'cold').
-adjetivo('cálido', 'warm').
-adjetivo('fresco', 'cool').
-adjetivo('largo', 'long').
-adjetivo('corto', 'short').
-adjetivo('ancho', 'wide').
-adjetivo('estrecho', 'narrow').
-adjetivo('profundo', 'deep').
-adjetivo('superficial', 'shallow').
-adjetivo('rico', 'rich').
-adjetivo('pobre', 'poor').
-adjetivo('caro', 'expensive').
-adjetivo('barato', 'cheap').
-adjetivo('difícil', 'difficult').
-adjetivo('fácil', 'easy').
-adjetivo('simple', 'simple').
-adjetivo('complejo', 'complex').
+% === ADJETIVOS CON GÉNERO Y NÚMERO ===
+% adjetivo(Español, Inglés, Género, Número)
 
-adjetivo('limpio', 'clean').
-adjetivo('sucio', 'dirty').
-adjetivo('ordenado', 'tidy').
-adjetivo('desordenado', 'messy').
-adjetivo('seco', 'dry').
-adjetivo('mojado', 'wet').
-adjetivo('amable', 'kind').
-adjetivo('grosero', 'rude').
-adjetivo('paciente', 'patient').
-adjetivo('impaciente', 'impatient').
-adjetivo('valiente', 'brave').
-adjetivo('cobarde', 'cowardly').
-adjetivo('generoso', 'generous').
-adjetivo('egoísta', 'selfish').
-adjetivo('sabroso', 'tasty').
-adjetivo('salado', 'salty').
-adjetivo('dulce', 'sweet').
-adjetivo('amargo', 'bitter').
-adjetivo('ácido', 'sour').
-adjetivo('ocupado', 'busy').
-adjetivo('libre', 'free').
-adjetivo('importante', 'important').
-adjetivo('trivial', 'trivial').
-adjetivo('peligroso', 'dangerous').
-adjetivo('seguro', 'safe').
-adjetivo('sano', 'healthy').
-adjetivo('enfermo', 'sick').
-adjetivo('cansado', 'tired').
-adjetivo('descansado', 'rested').
-adjetivo('emocionado', 'excited').
-adjetivo('aburrido', 'bored').
-adjetivo('sorprendido', 'surprised').
-adjetivo('confundido', 'confused').
-adjetivo('orgulloso', 'proud').
-adjetivo('avergonzado', 'ashamed').
-adjetivo('real', 'real').
-adjetivo('falso', 'false').
-adjetivo('verdadero', 'true').
-adjetivo('posible', 'possible').
-adjetivo('imposible', 'impossible').
-adjetivo('necesario', 'necessary').
-adjetivo('innecesario', 'unnecessary').
+% Adjetivos invariables (terminación -e, -ista, etc.)
+adjetivo('grande', 'big', masculino, singular).
+adjetivo('grande', 'big', masculino, plural).
+adjetivo('grande', 'big', femenino, singular).
+adjetivo('grande', 'big', femenino, plural).
+
+adjetivo('pequeño', 'small', masculino, singular).
+adjetivo('pequeños', 'small', masculino, plural).
+adjetivo('pequeña', 'small', femenino, singular).
+adjetivo('pequeñas', 'small', femenino, plural).
+
+adjetivo('inteligente', 'smart', masculino, singular).
+adjetivo('inteligentes', 'smart', masculino, plural).
+adjetivo('inteligente', 'smart', femenino, singular).
+adjetivo('inteligentes', 'smart', femenino, plural).
+
+adjetivo('bonito', 'beautiful', masculino, singular).
+adjetivo('bonitos', 'beautiful', masculino, plural).
+adjetivo('bonita', 'beautiful', femenino, singular).
+adjetivo('bonitas', 'beautiful', femenino, plural).
+
+adjetivo('feo', 'ugly', masculino, singular).
+adjetivo('feos', 'ugly', masculino, plural).
+adjetivo('fea', 'ugly', femenino, singular).
+adjetivo('feas', 'ugly', femenino, plural).
+
+adjetivo('rápido', 'fast', masculino, singular).
+adjetivo('rápidos', 'fast', masculino, plural).
+adjetivo('rápida', 'fast', femenino, singular).
+adjetivo('rápidas', 'fast', femenino, plural).
+
+adjetivo('lento', 'slow', masculino, singular).
+adjetivo('lentos', 'slow', masculino, plural).
+adjetivo('lenta', 'slow', femenino, singular).
+adjetivo('lentas', 'slow', femenino, plural).
+
+adjetivo('feliz', 'happy', masculino, singular).
+adjetivo('felices', 'happy', masculino, plural).
+adjetivo('feliz', 'happy', femenino, singular).
+adjetivo('felices', 'happy', femenino, plural).
+
+adjetivo('triste', 'sad', masculino, singular).
+adjetivo('tristes', 'sad', masculino, plural).
+adjetivo('triste', 'sad', femenino, singular).
+adjetivo('tristes', 'sad', femenino, plural).
+
+% Colores
+adjetivo('rojo', 'red', masculino, singular).
+adjetivo('rojos', 'red', masculino, plural).
+adjetivo('roja', 'red', femenino, singular).
+adjetivo('rojas', 'red', femenino, plural).
+
+adjetivo('azul', 'blue', masculino, singular).
+adjetivo('azules', 'blue', masculino, plural).
+adjetivo('azul', 'blue', femenino, singular).
+adjetivo('azules', 'blue', femenino, plural).
+
+adjetivo('verde', 'green', masculino, singular).
+adjetivo('verdes', 'green', masculino, plural).
+adjetivo('verde', 'green', femenino, singular).
+adjetivo('verdes', 'green', femenino, plural).
+
+adjetivo('blanco', 'white', masculino, singular).
+adjetivo('blancos', 'white', masculino, plural).
+adjetivo('blanca', 'white', femenino, singular).
+adjetivo('blancas', 'white', femenino, plural).
+
+adjetivo('negro', 'black', masculino, singular).
+adjetivo('negros', 'black', masculino, plural).
+adjetivo('negra', 'black', femenino, singular).
+adjetivo('negras', 'black', femenino, plural).
+
+adjetivo('amarillo', 'yellow', masculino, singular).
+adjetivo('amarillos', 'yellow', masculino, plural).
+adjetivo('amarilla', 'yellow', femenino, singular).
+adjetivo('amarillas', 'yellow', femenino, plural).
+
+adjetivo('naranja', 'orange', masculino, singular).
+adjetivo('naranja', 'orange', masculino, plural).
+adjetivo('naranja', 'orange', femenino, singular).
+adjetivo('naranja', 'orange', femenino, plural).
+
+adjetivo('morado', 'purple', masculino, singular).
+adjetivo('morados', 'purple', masculino, plural).
+adjetivo('morada', 'purple', femenino, singular).
+adjetivo('moradas', 'purple', femenino, plural).
+
+adjetivo('rosado', 'pink', masculino, singular).
+adjetivo('rosados', 'pink', masculino, plural).
+adjetivo('rosada', 'pink', femenino, singular).
+adjetivo('rosadas', 'pink', femenino, plural).
+
+adjetivo('marrón', 'brown', masculino, singular).
+adjetivo('marrones', 'brown', masculino, plural).
+adjetivo('marrón', 'brown', femenino, singular).
+adjetivo('marrones', 'brown', femenino, plural).
+
+adjetivo('gris', 'gray', masculino, singular).
+adjetivo('grises', 'gray', masculino, plural).
+adjetivo('gris', 'gray', femenino, singular).
+adjetivo('grises', 'gray', femenino, plural).
+
+% Tamaño y forma
+adjetivo('alto', 'tall', masculino, singular).
+adjetivo('altos', 'tall', masculino, plural).
+adjetivo('alta', 'tall', femenino, singular).
+adjetivo('altas', 'tall', femenino, plural).
+
+adjetivo('bajo', 'short', masculino, singular).
+adjetivo('bajos', 'short', masculino, plural).
+adjetivo('baja', 'short', femenino, singular).
+adjetivo('bajas', 'short', femenino, plural).
+
+adjetivo('largo', 'long', masculino, singular).
+adjetivo('largos', 'long', masculino, plural).
+adjetivo('larga', 'long', femenino, singular).
+adjetivo('largas', 'long', femenino, plural).
+
+adjetivo('corto', 'short', masculino, singular).
+adjetivo('cortos', 'short', masculino, plural).
+adjetivo('corta', 'short', femenino, singular).
+adjetivo('cortas', 'short', femenino, plural).
+
+adjetivo('ancho', 'wide', masculino, singular).
+adjetivo('anchos', 'wide', masculino, plural).
+adjetivo('ancha', 'wide', femenino, singular).
+adjetivo('anchas', 'wide', femenino, plural).
+
+adjetivo('estrecho', 'narrow', masculino, singular).
+adjetivo('estrechos', 'narrow', masculino, plural).
+adjetivo('estrecha', 'narrow', femenino, singular).
+adjetivo('estrechas', 'narrow', femenino, plural).
+
+% Continuaré con el resto de los adjetivos...
+adjetivo('profundo', 'deep', masculino, singular).
+adjetivo('profundos', 'deep', masculino, plural).
+adjetivo('profunda', 'deep', femenino, singular).
+adjetivo('profundas', 'deep', femenino, plural).
+
+adjetivo('superficial', 'shallow', masculino, singular).
+adjetivo('superficiales', 'shallow', masculino, plural).
+adjetivo('superficial', 'shallow', femenino, singular).
+adjetivo('superficiales', 'shallow', femenino, plural).
+
+% Edad y tiempo
+adjetivo('joven', 'young', masculino, singular).
+adjetivo('jóvenes', 'young', masculino, plural).
+adjetivo('joven', 'young', femenino, singular).
+adjetivo('jóvenes', 'young', femenino, plural).
+
+adjetivo('viejo', 'old', masculino, singular).
+adjetivo('viejos', 'old', masculino, plural).
+adjetivo('vieja', 'old', femenino, singular).
+adjetivo('viejas', 'old', femenino, plural).
+
+adjetivo('nuevo', 'new', masculino, singular).
+adjetivo('nuevos', 'new', masculino, plural).
+adjetivo('nueva', 'new', femenino, singular).
+adjetivo('nuevas', 'new', femenino, plural).
+
+adjetivo('moderno', 'modern', masculino, singular).
+adjetivo('modernos', 'modern', masculino, plural).
+adjetivo('moderna', 'modern', femenino, singular).
+adjetivo('modernas', 'modern', femenino, plural).
+
+adjetivo('antiguo', 'ancient', masculino, singular).
+adjetivo('antiguos', 'ancient', masculino, plural).
+adjetivo('antigua', 'ancient', femenino, singular).
+adjetivo('antiguas', 'ancient', femenino, plural).
+
+% Textura y peso
+adjetivo('fuerte', 'strong', masculino, singular).
+adjetivo('fuertes', 'strong', masculino, plural).
+adjetivo('fuerte', 'strong', femenino, singular).
+adjetivo('fuertes', 'strong', femenino, plural).
+
+adjetivo('débil', 'weak', masculino, singular).
+adjetivo('débiles', 'weak', masculino, plural).
+adjetivo('débil', 'weak', femenino, singular).
+adjetivo('débiles', 'weak', femenino, plural).
+
+adjetivo('duro', 'hard', masculino, singular).
+adjetivo('duros', 'hard', masculino, plural).
+adjetivo('dura', 'hard', femenino, singular).
+adjetivo('duras', 'hard', femenino, plural).
+
+adjetivo('suave', 'soft', masculino, singular).
+adjetivo('suaves', 'soft', masculino, plural).
+adjetivo('suave', 'soft', femenino, singular).
+adjetivo('suaves', 'soft', femenino, plural).
+
+adjetivo('pesado', 'heavy', masculino, singular).
+adjetivo('pesados', 'heavy', masculino, plural).
+adjetivo('pesada', 'heavy', femenino, singular).
+adjetivo('pesadas', 'heavy', femenino, plural).
+
+adjetivo('ligero', 'light', masculino, singular).
+adjetivo('ligeros', 'light', masculino, plural).
+adjetivo('ligera', 'light', femenino, singular).
+adjetivo('ligeras', 'light', femenino, plural).
+
+% Temperatura
+adjetivo('caliente', 'hot', masculino, singular).
+adjetivo('calientes', 'hot', masculino, plural).
+adjetivo('caliente', 'hot', femenino, singular).
+adjetivo('calientes', 'hot', femenino, plural).
+
+adjetivo('frío', 'cold', 'masculino, singular).
+adjetivo('fríos', 'cold', 'masculino, plural).
+adjetivo('fría', 'cold', 'femenino, singular).
+adjetivo('frías', 'cold', 'femenino, plural).
+
+adjetivo('cálido', 'warm', 'masculino, singular).
+adjetivo('cálidos', 'warm', 'masculino, plural).
+adjetivo('cálida', 'warm', 'femenino, singular).
+adjetivo('cálidas', 'warm', 'femenino, plural).
+
+adjetivo('fresco', 'cool', 'masculino, singular).
+adjetivo('frescos', 'cool', 'masculino, plural).
+adjetivo('fresca', 'cool', 'femenino, singular).
+adjetivo('frescas', 'cool', 'femenino, plural).
 
 % === ARTÍCULOS Y DETERMINANTES ===
 % determinante(Español, Inglés, Número, Género, Tipo)
-determinante('el', 'the', 'singular', 'masculino', 'artículo_definido').
-determinante('la', 'the', 'singular', 'femenino', 'artículo_definido').
-determinante('los', 'the', 'plural', 'masculino', 'artículo_definido').
-determinante('las', 'the', 'plural', 'femenino', 'artículo_definido').
-determinante('un', 'a', 'singular', 'masculino', 'artículo_indefinido').
-determinante('una', 'a', 'singular', 'femenino', 'artículo_indefinido').
-determinante('unos', 'some', 'plural', 'masculino', 'artículo_indefinido').
-determinante('unas', 'some', 'plural', 'femenino', 'artículo_indefinido').
+determinante('el', 'the', 'singular', 'masculino', 'artículo definido').
+determinante('la', 'the', 'singular', 'femenino', 'artículo definido').
+determinante('los', 'the', 'plural', 'masculino', 'artículo definido').
+determinante('las', 'the', 'plural', 'femenino', 'artículo definido').
+determinante('un', 'a', 'singular', 'masculino', 'artículo indefinido').
+determinante('una', 'a', 'singular', 'femenino', 'artículo indefinido').
+determinante('unos', 'some', 'plural', 'masculino', 'artículo indefinido').
+determinante('unas', 'some', 'plural', 'femenino', 'artículo indefinido').
 
 % Demostrativos
 determinante('este', 'this', 'singular', 'masculino', 'demostrativo').
@@ -593,6 +722,7 @@ pronombre('varias', 'several', 'tercera', 'plural').
 
 % === PREPOSICIONES ===
 % preposicion(Español, Inglés)
+
 preposicion('a', 'to').
 preposicion('de', 'of').
 preposicion('en', 'in').
