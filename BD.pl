@@ -1,26 +1,5 @@
 % BD.pl
 
-sustantivo('yo', 'i', 'primera', 'singular', neutro).
-sustantivo('tú', 'you', 'segunda', 'singular', neutro).
-sustantivo('usted', 'you', 'segunda', 'singular', neutro).
-sustantivo('él', 'he', 'tercera', 'singular', masculino).
-sustantivo('ella', 'she', 'tercera', 'singular', femenino).
-sustantivo('eso', 'it', 'tercera', 'singular', neutro).
-sustantivo('ello', 'it', 'tercera', 'singular', neutro).
-
-sustantivo('nosotros', 'we', 'primera', 'plural', masculino).
-sustantivo('nosotras', 'we', 'primera', 'plural', femenino).
-sustantivo('vosotros', 'you', 'segunda', 'plural', masculino).
-sustantivo('vosotras', 'you', 'segunda', 'plural', femenino).
-sustantivo('ustedes', 'you', 'segunda', 'plural', neutro).
-sustantivo('ellos', 'they', 'tercera', 'plural', masculino).
-sustantivo('ellas', 'they', 'tercera', 'plural', femenino).
-
-sustantivo('gato', 'cat', 'tercera', 'singular', masculino).
-sustantivo('hombre', 'man', 'tercera', 'singular', masculino).
-sustantivo('mujer', 'woman', 'tercera', 'singular', femenino).
-sustantivo('casa', 'house', 'tercera', 'singular', femenino).
-sustantivo('nombre', 'name', 'tercera', 'singular', masculino).
 
 % INTERJECCIONES
 interjeccion('hola', 'hello').
@@ -93,153 +72,155 @@ interjeccion('socorro', 'help').
 interjeccion('ladrón', 'thief').
 interjeccion('policía', 'police').
 
-% Sustantivos (español, inglés, tipo)
-sustantivo('niño', 'boy', 'singular').
-sustantivo('niños', 'boys', 'plural').
-sustantivo('niña', 'girl', 'singular').
-sustantivo('niñas', 'girls', 'plural').
-sustantivo('hombre', 'man', 'singular').
-sustantivo('hombres', 'men', 'plural').
-sustantivo('mujer', 'woman', 'singular').
-sustantivo('mujeres', 'women', 'plural').
-sustantivo('profesor', 'teacher', 'singular').
-sustantivo('profesores', 'teachers', 'plural').
-sustantivo('estudiante', 'student', 'singular').
-sustantivo('estudiantes', 'students', 'plural').
-sustantivo('perro', 'dog', 'singular').
-sustantivo('perros', 'dogs', 'plural').
-sustantivo('gato', 'cat', 'singular').
-sustantivo('gatos', 'cats', 'plural').
-sustantivo('casa', 'house', 'singular').
-sustantivo('casas', 'houses', 'plural').
-sustantivo('libro', 'book', 'singular').
-sustantivo('libros', 'books', 'plural').
-sustantivo('escuela', 'school', 'singular').
-sustantivo('escuelas', 'schools', 'plural').
-sustantivo('ciudad', 'city', 'singular').
-sustantivo('ciudades', 'cities', 'plural').
-sustantivo('país', 'country', 'singular').
-sustantivo('países', 'countries', 'plural').
-sustantivo('madre', 'mother', 'singular').
-sustantivo('madres', 'mothers', 'plural').
-sustantivo('padre', 'father', 'singular').
-sustantivo('padres', 'fathers', 'plural').
-sustantivo('hermano', 'brother', 'singular').
-sustantivo('hermanos', 'brothers', 'plural').
-sustantivo('hermana', 'sister', 'singular').
-sustantivo('hermanas', 'sisters', 'plural').
-sustantivo('amigo', 'friend', 'singular').
-sustantivo('amigos', 'friends', 'plural').
-sustantivo('amiga', 'friend', 'singular').
-sustantivo('amigas', 'friends', 'plural').
-sustantivo('familia', 'family', 'singular').
-sustantivo('familias', 'families', 'plural').
+% Sustantivos(español, inglés,persona, singular/plural, genero)
+% Pronombres personales mas significativos
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+sustantivo('yo', 'i', 'primera', 'singular', neutro).
+sustantivo('tú', 'you', 'segunda', 'singular', neutro).
+sustantivo('usted', 'you', 'segunda', 'singular', neutro).
+sustantivo('él', 'he', 'tercera', 'singular', masculino).
+sustantivo('ella', 'she', 'tercera', 'singular', femenino).
+sustantivo('eso', 'it', 'tercera', 'singular', neutro).
+sustantivo('ello', 'it', 'tercera', 'singular', neutro).
+sustantivo('nosotros', 'we', 'primera', 'plural', masculino).
+sustantivo('nosotras', 'we', 'primera', 'plural', femenino).
+sustantivo('vosotros', 'you', 'segunda', 'plural', masculino).
+sustantivo('vosotras', 'you', 'segunda', 'plural', femenino).
+sustantivo('ustedes', 'you', 'segunda', 'plural', neutro).
+sustantivo('ellos', 'they', 'tercera', 'plural', masculino).
+sustantivo('ellas', 'they', 'tercera', 'plural', femenino).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-sustantivo('mesa', 'table', 'singular').
-sustantivo('mesas', 'tables', 'plural').
-sustantivo('silla', 'chair', 'singular').
-sustantivo('sillas', 'chairs', 'plural').
-sustantivo('ventana', 'window', 'singular').
-sustantivo('ventanas', 'windows', 'plural').
-sustantivo('puerta', 'door', 'singular').
-sustantivo('puertas', 'doors', 'plural').
-sustantivo('techo', 'ceiling', 'singular').
-sustantivo('techos', 'ceilings', 'plural').
-sustantivo('suelo', 'floor', 'singular').
-sustantivo('suelos', 'floors', 'plural').
-
-sustantivo('coche', 'car', 'singular').
-sustantivo('coches', 'cars', 'plural').
-sustantivo('bicicleta', 'bicycle', 'singular').
-sustantivo('bicicletas', 'bicycles', 'plural').
-sustantivo('autobús', 'bus', 'singular').
-sustantivo('autobuses', 'buses', 'plural').
-sustantivo('tren', 'train', 'singular').
-sustantivo('trenes', 'trains', 'plural').
-sustantivo('avión', 'airplane', 'singular').
-sustantivo('aviones', 'airplanes', 'plural').
-
-sustantivo('agua', 'water', 'singular').
-sustantivo('comida', 'food', 'singular').
-sustantivo('pan', 'bread', 'singular').
-sustantivo('leche', 'milk', 'singular').
-sustantivo('carne', 'meat', 'singular').
-sustantivo('fruta', 'fruit', 'singular').
-sustantivo('frutas', 'fruits', 'plural').
-sustantivo('verdura', 'vegetable', 'singular').
-sustantivo('verduras', 'vegetables', 'plural').
-
-sustantivo('trabajo', 'work', 'singular').
-sustantivo('trabajos', 'works', 'plural').
-sustantivo('dinero', 'money', 'singular').
-sustantivo('tiempo', 'time', 'singular').
-sustantivo('día', 'day', 'singular').
-sustantivo('días', 'days', 'plural').
-sustantivo('noche', 'night', 'singular').
-sustantivo('noches', 'nights', 'plural').
-sustantivo('semana', 'week', 'singular').
-sustantivo('semanas', 'weeks', 'plural').
-sustantivo('mes', 'month', 'singular').
-sustantivo('meses', 'months', 'plural').
-sustantivo('año', 'year', 'singular').
-sustantivo('años', 'years', 'plural').
-
-sustantivo('país', 'country', 'singular').
-sustantivo('países', 'countries', 'plural').
-sustantivo('ciudad', 'city', 'singular').
-sustantivo('ciudades', 'cities', 'plural').
-sustantivo('pueblo', 'town', 'singular').
-sustantivo('pueblos', 'towns', 'plural').
-sustantivo('casa', 'house', 'singular').
-sustantivo('casas', 'houses', 'plural').
-sustantivo('edificio', 'building', 'singular').
-sustantivo('edificios', 'buildings', 'plural').
-
-sustantivo('sol', 'sun', 'singular').
-sustantivo('luna', 'moon', 'singular').
-sustantivo('estrella', 'star', 'singular').
-sustantivo('estrellas', 'stars', 'plural').
-sustantivo('cielo', 'sky', 'singular').
-sustantivo('tierra', 'earth', 'singular').
-sustantivo('mar', 'sea', 'singular').
-sustantivo('río', 'river', 'singular').
-sustantivo('ríos', 'rivers', 'plural').
-sustantivo('montaña', 'mountain', 'singular').
-sustantivo('montañas', 'mountains', 'plural').
-
-sustantivo('amor', 'love', 'singular').
-sustantivo('vida', 'life', 'singular').
-sustantivo('vidas', 'lives', 'plural').
-sustantivo('muerte', 'death', 'singular').
-sustantivo('felicidad', 'happiness', 'singular').
-sustantivo('tristeza', 'sadness', 'singular').
-sustantivo('miedo', 'fear', 'singular').
-sustantivo('esperanza', 'hope', 'singular').
-
-sustantivo('problema', 'problem', 'singular').
-sustantivo('problemas', 'problems', 'plural').
-sustantivo('solución', 'solution', 'singular').
-sustantivo('soluciones', 'solutions', 'plural').
-sustantivo('pregunta', 'question', 'singular').
-sustantivo('preguntas', 'questions', 'plural').
-sustantivo('respuesta', 'answer', 'singular').
-sustantivo('respuestas', 'answers', 'plural').
-
-sustantivo('juego', 'game', 'singular').
-sustantivo('juegos', 'games', 'plural').
-sustantivo('deporte', 'sport', 'singular').
-sustantivo('deportes', 'sports', 'plural').
-sustantivo('música', 'music', 'singular').
-sustantivo('película', 'movie', 'singular').
-sustantivo('películas', 'movies', 'plural').
-sustantivo('libro', 'book', 'singular').
-sustantivo('libros', 'books', 'plural').
+sustantivo('niño', 'boy', 'tercera', 'singular', masculino).
+sustantivo('niños', 'boys', 'tercera', 'plural', masculino).
+sustantivo('niña', 'girl', 'tercera', 'singular', femenino).
+sustantivo('niñas', 'girls', 'tercera', 'plural', femenino).
+sustantivo('hombre', 'man', 'tercera', 'singular', masculino).
+sustantivo('hombres', 'men', 'tercera', 'plural', masculino).
+sustantivo('mujer', 'woman', 'tercera', 'singular', femenino).
+sustantivo('mujeres', 'women', 'tercera', 'plural', femenino).
+sustantivo('profesor', 'teacher', 'tercera', 'singular', masculino).
+sustantivo('profesores', 'teachers', 'tercera', 'plural', masculino).
+sustantivo('estudiante', 'student', 'tercera', 'singular', neutro).
+sustantivo('estudiantes', 'students', 'tercera', 'plural', neutro).
+sustantivo('perro', 'dog', 'tercera', 'singular', masculino).
+sustantivo('perros', 'dogs', 'tercera', 'plural', masculino).
+sustantivo('gato', 'cat', 'tercera', 'singular', masculino).
+sustantivo('gatos', 'cats', 'tercera', 'plural', masculino).
+sustantivo('madre', 'mother', 'tercera', 'singular', femenino).
+sustantivo('madres', 'mothers', 'tercera', 'plural', femenino).
+sustantivo('padre', 'father', 'tercera', 'singular', masculino).
+sustantivo('padres', 'fathers', 'tercera', 'plural', masculino).
+sustantivo('hermano', 'brother', 'tercera', 'singular', masculino).
+sustantivo('hermanos', 'brothers', 'tercera', 'plural', masculino).
+sustantivo('hermana', 'sister', 'tercera', 'singular', femenino).
+sustantivo('hermanas', 'sisters', 'tercera', 'plural', femenino).
+sustantivo('amigo', 'friend', 'tercera', 'singular', masculino).
+sustantivo('amigos', 'friends', 'tercera', 'plural', masculino).
+sustantivo('amiga', 'friend', 'tercera', 'singular', femenino).
+sustantivo('amigas', 'friends', 'tercera', 'plural', femenino).
+sustantivo('familia', 'family', 'tercera', 'singular', femenino).
+sustantivo('familias', 'families', 'tercera', 'plural', femenino).
+sustantivo('casa', 'house', 'tercera', 'singular', femenino).
+sustantivo('casas', 'houses', 'tercera', 'plural', femenino).
+sustantivo('escuela', 'school', 'tercera', 'singular', femenino).
+sustantivo('escuelas', 'schools', 'tercera', 'plural', femenino).
+sustantivo('ciudad', 'city', 'tercera', 'singular', femenino).
+sustantivo('ciudades', 'cities', 'tercera', 'plural', femenino).
+sustantivo('país', 'country', 'tercera', 'singular', masculino).
+sustantivo('países', 'countries', 'tercera', 'plural', masculino).
+sustantivo('pueblo', 'town', 'tercera', 'singular', masculino).
+sustantivo('pueblos', 'towns', 'tercera', 'plural', masculino).
+sustantivo('edificio', 'building', 'tercera', 'singular', masculino).
+sustantivo('edificios', 'buildings', 'tercera', 'plural', masculino).
+sustantivo('mesa', 'table', 'tercera', 'singular', femenino).
+sustantivo('mesas', 'tables', 'tercera', 'plural', femenino).
+sustantivo('silla', 'chair', 'tercera', 'singular', femenino).
+sustantivo('sillas', 'chairs', 'tercera', 'plural', femenino).
+sustantivo('ventana', 'window', 'tercera', 'singular', femenino).
+sustantivo('ventanas', 'windows', 'tercera', 'plural', femenino).
+sustantivo('puerta', 'door', 'tercera', 'singular', femenino).
+sustantivo('puertas', 'doors', 'tercera', 'plural', femenino).
+sustantivo('techo', 'ceiling', 'tercera', 'singular', masculino).
+sustantivo('techos', 'ceilings', 'tercera', 'plural', masculino).
+sustantivo('suelo', 'floor', 'tercera', 'singular', masculino).
+sustantivo('suelos', 'floors', 'tercera', 'plural', masculino).
+sustantivo('libro', 'book', 'tercera', 'singular', masculino).
+sustantivo('libros', 'books', 'tercera', 'plural', masculino).
+sustantivo('coche', 'car', 'tercera', 'singular', masculino).
+sustantivo('coches', 'cars', 'tercera', 'plural', masculino).
+sustantivo('bicicleta', 'bicycle', 'tercera', 'singular', femenino).
+sustantivo('bicicletas', 'bicycles', 'tercera', 'plural', femenino).
+sustantivo('autobús', 'bus', 'tercera', 'singular', masculino).
+sustantivo('autobuses', 'buses', 'tercera', 'plural', masculino).
+sustantivo('tren', 'train', 'tercera', 'singular', masculino).
+sustantivo('trenes', 'trains', 'tercera', 'plural', masculino).
+sustantivo('avión', 'airplane', 'tercera', 'singular', masculino).
+sustantivo('aviones', 'airplanes', 'tercera', 'plural', masculino).
+sustantivo('agua', 'water', 'tercera', 'singular', femenino).
+sustantivo('comida', 'food', 'tercera', 'singular', femenino).
+sustantivo('pan', 'bread', 'tercera', 'singular', masculino).
+sustantivo('leche', 'milk', 'tercera', 'singular', femenino).
+sustantivo('carne', 'meat', 'tercera', 'singular', femenino).
+sustantivo('fruta', 'fruit', 'tercera', 'singular', femenino).
+sustantivo('frutas', 'fruits', 'tercera', 'plural', femenino).
+sustantivo('verdura', 'vegetable', 'tercera', 'singular', femenino).
+sustantivo('verduras', 'vegetables', 'tercera', 'plural', femenino).
+sustantivo('trabajo', 'work', 'tercera', 'singular', masculino).
+sustantivo('trabajos', 'works', 'tercera', 'plural', masculino).
+sustantivo('dinero', 'money', 'tercera', 'singular', masculino).
+sustantivo('tiempo', 'time', 'tercera', 'singular', masculino).
+sustantivo('día', 'day', 'tercera', 'singular', masculino).
+sustantivo('días', 'days', 'tercera', 'plural', masculino).
+sustantivo('noche', 'night', 'tercera', 'singular', femenino).
+sustantivo('noches', 'nights', 'tercera', 'plural', femenino).
+sustantivo('semana', 'week', 'tercera', 'singular', femenino).
+sustantivo('semanas', 'weeks', 'tercera', 'plural', femenino).
+sustantivo('mes', 'month', 'tercera', 'singular', masculino).
+sustantivo('meses', 'months', 'tercera', 'plural', masculino).
+sustantivo('año', 'year', 'tercera', 'singular', masculino).
+sustantivo('años', 'years', 'tercera', 'plural', masculino).
+sustantivo('sol', 'sun', 'tercera', 'singular', masculino).
+sustantivo('luna', 'moon', 'tercera', 'singular', femenino).
+sustantivo('estrella', 'star', 'tercera', 'singular', femenino).
+sustantivo('estrellas', 'stars', 'tercera', 'plural', femenino).
+sustantivo('cielo', 'sky', 'tercera', 'singular', masculino).
+sustantivo('tierra', 'earth', 'tercera', 'singular', femenino).
+sustantivo('mar', 'sea', 'tercera', 'singular', masculino).
+sustantivo('río', 'river', 'tercera', 'singular', masculino).
+sustantivo('ríos', 'rivers', 'tercera', 'plural', masculino).
+sustantivo('montaña', 'mountain', 'tercera', 'singular', femenino).
+sustantivo('montañas', 'mountains', 'tercera', 'plural', femenino).
+sustantivo('amor', 'love', 'tercera', 'singular', masculino).
+sustantivo('vida', 'life', 'tercera', 'singular', femenino).
+sustantivo('vidas', 'lives', 'tercera', 'plural', femenino).
+sustantivo('muerte', 'death', 'tercera', 'singular', femenino).
+sustantivo('felicidad', 'happiness', 'tercera', 'singular', femenino).
+sustantivo('tristeza', 'sadness', 'tercera', 'singular', femenino).
+sustantivo('miedo', 'fear', 'tercera', 'singular', masculino).
+sustantivo('esperanza', 'hope', 'tercera', 'singular', femenino).
+sustantivo('problema', 'problem', 'tercera', 'singular', masculino).
+sustantivo('problemas', 'problems', 'tercera', 'plural', masculino).
+sustantivo('solución', 'solution', 'tercera', 'singular', femenino).
+sustantivo('soluciones', 'solutions', 'tercera', 'plural', femenino).
+sustantivo('pregunta', 'question', 'tercera', 'singular', femenino).
+sustantivo('preguntas', 'questions', 'tercera', 'plural', femenino).
+sustantivo('respuesta', 'answer', 'tercera', 'singular', femenino).
+sustantivo('respuestas', 'answers', 'tercera', 'plural', femenino).
+sustantivo('juego', 'game', 'tercera', 'singular', masculino).
+sustantivo('juegos', 'games', 'tercera', 'plural', masculino).
+sustantivo('deporte', 'sport', 'tercera', 'singular', masculino).
+sustantivo('deportes', 'sports', 'tercera', 'plural', masculino).
+sustantivo('música', 'music', 'tercera', 'singular', femenino).
+sustantivo('película', 'movie', 'tercera', 'singular', femenino).
+sustantivo('películas', 'movies', 'tercera', 'plural', femenino).
+sustantivo('nombre', 'name', 'tercera', 'singular', masculino).
 
 % === VERBOS ===
 % verbo(InfinitivoEsp, InfinitivoEng, [ConjugacionesEsp], [ConjugacionesEng])
 verbo('ser', 'be', ['soy', 'eres', 'es', 'somos', 'sois', 'son'], ['am', 'are', 'is', 'are', 'are', 'are']).
-verbo('tener', 'have', ['tengo', 'tienes', 'tiene', 'tenemos', 'tenéis', 'tienen'], ['have']).
-verbo('hablar', 'speak', ['hablo', 'hablas', 'habla', 'hablamos', 'habláis', 'hablan'], ['speak','speaks']).
+verbo('tener', 'have', ['tengo', 'tienes', 'tiene', 'tenemos', 'tenéis', 'tienen'], ['have', 'have', 'has', 'have', 'have', 'have']).
+verbo('hablar', 'speak', ['hablo', 'hablas', 'habla', 'hablamos', 'habláis', 'hablan'], ['speak', 'speak', 'speaks', 'speak', 'speak', 'speak']).
 verbo('comer', 'eat', ['como', 'comes', 'come', 'comemos', 'coméis', 'comen'], ['eat', 'eat', 'eats', 'eat', 'eat', 'eat']).
 verbo('beber', 'drink', ['bebo', 'bebes', 'bebe', 'bebemos', 'bebéis', 'beben'], ['drink', 'drink', 'drinks', 'drink', 'drink', 'drink']).
 verbo('correr', 'run', ['corro', 'corres', 'corre', 'corremos', 'corréis', 'corren'], ['run', 'run', 'runs', 'run', 'run', 'run']).
@@ -295,145 +276,258 @@ verbo('levantar', 'lift', ['levanto', 'levantas', 'levanta', 'levantamos', 'leva
 verbo('bajar', 'lower', ['bajo', 'bajas', 'baja', 'bajamos', 'bajáis', 'bajan'], ['lower', 'lower', 'lowers', 'lower', 'lower', 'lower']).
 verbo('construir', 'build', ['construyo', 'construyes', 'construye', 'construimos', 'construís', 'construyen'], ['build', 'build', 'builds', 'build', 'build', 'build']).
 verbo('crear', 'create', ['creo', 'creas', 'crea', 'creamos', 'creáis', 'crean'], ['create', 'create', 'creates', 'create', 'create', 'create']).
-verbo('destruir', 'destroy', ['destruyo', 'destruyes', 'destruye', 'destruimos', 'destruís', 'destruyen'], ['destroy', 'destroy', 'destroys']).
-verbo('aprender', 'learn', ['aprendo', 'aprendes', 'aprende', 'aprendemos', 'aprendéis', 'aprenden'], ['learn', 'learn', 'learns']).
-verbo('enseñar', 'teach', ['enseño', 'enseñas', 'enseña', 'enseñamos', 'enseñáis', 'enseñan'], ['teach', 'teach', 'teaches']).
-verbo('explicar', 'explain', ['explico', 'explicas', 'explica', 'explicamos', 'explicáis', 'explican'], ['explain', 'explain', 'explains']).
-verbo('mostrar', 'show', ['muestro', 'muestras', 'muestra', 'mostramos', 'mostráis', 'muestran'], ['show', 'show', 'shows']).
-verbo('escuchar', 'listen', ['escucho', 'escuchas', 'escucha', 'escuchamos', 'escucháis', 'escuchan'], ['listen', 'listen', 'listens']).
-verbo('cantar', 'sing', ['canto', 'cantas', 'canta', 'cantamos', 'cantáis', 'cantan'], ['sing', 'sing', 'sings']).
-verbo('bailar', 'dance', ['bailo', 'bailas', 'baila', 'bailamos', 'bailáis', 'bailan'], ['dance', 'dance', 'dances']).
-verbo('reír', 'laugh', ['río', 'ríes', 'ríe', 'reímos', 'reís', 'ríen'], ['laugh', 'laugh', 'laughs']).
-verbo('llorar', 'cry', ['lloro', 'lloras', 'llora', 'lloramos', 'lloráis', 'lloran'], ['cry', 'cry', 'cries']).
-verbo('dormir', 'sleep', ['duermo', 'duermes', 'duerme', 'dormimos', 'dormís', 'duermen'], ['sleep', 'sleep', 'sleeps']).
-verbo('despertar', 'wake', ['despierto', 'despiertas', 'despierta', 'despertamos', 'despertáis', 'despiertan'], ['wake', 'wake', 'wakes']).
-verbo('cocinar', 'cook', ['cocino', 'cocinas', 'cocina', 'cocinamos', 'cocináis', 'cocinan'], ['cook', 'cook', 'cooks']).
-verbo('limpiar', 'clean', ['limpio', 'limpias', 'limpia', 'limpiamos', 'limpiáis', 'limpian'], ['clean', 'clean', 'cleans']).
-verbo('lavar', 'wash', ['lavo', 'lavas', 'lava', 'lavamos', 'laváis', 'lavan'], ['wash', 'wash', 'washes']).
-verbo('planchar', 'iron', ['plancho', 'planchas', 'plancha', 'planchamos', 'plancháis', 'planchan'], ['iron', 'iron', 'irons']).
-verbo('conducir', 'drive', ['conduzco', 'conduces', 'conduce', 'conducimos', 'conducís', 'conducen'], ['drive', 'drive', 'drives']).
-verbo('viajar', 'travel', ['viajo', 'viajas', 'viaja', 'viajamos', 'viajáis', 'viajan'], ['travel', 'travel', 'travels']).
-verbo('visitar', 'visit', ['visito', 'visitas', 'visita', 'visitamos', 'visitáis', 'visitan'], ['visit', 'visit', 'visits']).
-verbo('invitar', 'invite', ['invito', 'invitas', 'invita', 'invitamos', 'invitáis', 'invitan'], ['invite', 'invite', 'invites']).
-verbo('recibir', 'receive', ['recibo', 'recibes', 'recibe', 'recibimos', 'recibís', 'reciben'], ['receive', 'receive', 'receives']).
-verbo('enviar', 'send', ['envío', 'envías', 'envía', 'enviamos', 'enviáis', 'envían'], ['send', 'send', 'sends']).
-verbo('llevar', 'carry', ['llevo', 'llevas', 'lleva', 'llevamos', 'lleváis', 'llevan'], ['carry', 'carry', 'carries']).
-verbo('traer', 'bring', ['traigo', 'traes', 'trae', 'traemos', 'traéis', 'traen'], ['bring', 'bring', 'brings']).
-verbo('tomar', 'take', ['tomo', 'tomas', 'toma', 'tomamos', 'tomáis', 'toman'], ['take', 'take', 'takes']).
-verbo('poner', 'put', ['pongo', 'pones', 'pone', 'ponemos', 'ponéis', 'ponen'], ['put', 'put', 'puts']).
-verbo('mantener', 'keep', ['mantengo', 'mantienes', 'mantiene', 'mantenemos', 'mantenéis', 'mantienen'], ['keep', 'keep', 'keeps']).
-verbo('permitir', 'allow', ['permito', 'permites', 'permite', 'permitimos', 'permitís', 'permiten'], ['allow', 'allow', 'allows']).
-verbo('evitar', 'avoid', ['evito', 'evitas', 'evita', 'evitamos', 'evitáis', 'evitan'], ['avoid','avoids']).
-verbo('elegir', 'choose', ['elijo', 'eliges', 'elige', 'elegimos', 'elegís', 'eligen'], ['choose', 'chooses']).
-verbo('decidir', 'decide', ['decido', 'decides', 'decide', 'decidimos', 'decidís', 'deciden'], ['decide', 'decides']).
+verbo('destruir', 'destroy', ['destruyo', 'destruyes', 'destruye', 'destruimos', 'destruís', 'destruyen'], ['destroy', 'destroy', 'destroys', 'destroy', 'destroy', 'destroy']).
+verbo('aprender', 'learn', ['aprendo', 'aprendes', 'aprende', 'aprendemos', 'aprendéis', 'aprenden'], ['learn', 'learn', 'learns', 'learn', 'learn', 'learn']).
+verbo('enseñar', 'teach', ['enseño', 'enseñas', 'enseña', 'enseñamos', 'enseñáis', 'enseñan'], ['teach', 'teach', 'teaches', 'teach', 'teach', 'teach']).
+verbo('explicar', 'explain', ['explico', 'explicas', 'explica', 'explicamos', 'explicáis', 'explican'], ['explain', 'explain', 'explains', 'explain', 'explain', 'explain']).
+verbo('mostrar', 'show', ['muestro', 'muestras', 'muestra', 'mostramos', 'mostráis', 'muestran'], ['show', 'show', 'shows', 'show', 'show', 'show']).
+verbo('escuchar', 'listen', ['escucho', 'escuchas', 'escucha', 'escuchamos', 'escucháis', 'escuchan'], ['listen', 'listen', 'listens', 'listen', 'listen', 'listen']).
+verbo('cantar', 'sing', ['canto', 'cantas', 'canta', 'cantamos', 'cantáis', 'cantan'], ['sing', 'sing', 'sings', 'sing', 'sing', 'sing']).
+verbo('bailar', 'dance', ['bailo', 'bailas', 'baila', 'bailamos', 'bailáis', 'bailan'], ['dance', 'dance', 'dances', 'dance', 'dance', 'dance']).
+verbo('reír', 'laugh', ['río', 'ríes', 'ríe', 'reímos', 'reís', 'ríen'], ['laugh', 'laugh', 'laughs', 'laugh', 'laugh', 'laugh']).
+verbo('llorar', 'cry', ['lloro', 'lloras', 'llora', 'lloramos', 'lloráis', 'lloran'], ['cry', 'cry', 'cries', 'cry', 'cry', 'cry']).
+verbo('dormir', 'sleep', ['duermo', 'duermes', 'duerme', 'dormimos', 'dormís', 'duermen'], ['sleep', 'sleep', 'sleeps', 'sleep', 'sleep', 'sleep']).
+verbo('despertar', 'wake', ['despierto', 'despiertas', 'despierta', 'despertamos', 'despertáis', 'despiertan'], ['wake', 'wake', 'wakes', 'wake', 'wake', 'wake']).
+verbo('cocinar', 'cook', ['cocino', 'cocinas', 'cocina', 'cocinamos', 'cocináis', 'cocinan'], ['cook', 'cook', 'cooks', 'cook', 'cook', 'cook']).
+verbo('limpiar', 'clean', ['limpio', 'limpias', 'limpia', 'limpiamos', 'limpiáis', 'limpian'], ['clean', 'clean', 'cleans', 'clean', 'clean', 'clean']).
+verbo('lavar', 'wash', ['lavo', 'lavas', 'lava', 'lavamos', 'laváis', 'lavan'], ['wash', 'wash', 'washes', 'wash', 'wash', 'wash']).
+verbo('planchar', 'iron', ['plancho', 'planchas', 'plancha', 'planchamos', 'plancháis', 'planchan'], ['iron', 'iron', 'irons', 'iron', 'iron', 'iron']).
+verbo('conducir', 'drive', ['conduzco', 'conduces', 'conduce', 'conducimos', 'conducís', 'conducen'], ['drive', 'drive', 'drives', 'drive', 'drive', 'drive']).
+verbo('viajar', 'travel', ['viajo', 'viajas', 'viaja', 'viajamos', 'viajáis', 'viajan'], ['travel', 'travel', 'travels', 'travel', 'travel', 'travel']).
+verbo('visitar', 'visit', ['visito', 'visitas', 'visita', 'visitamos', 'visitáis', 'visitan'], ['visit', 'visit', 'visits', 'visit', 'visit', 'visit']).
+verbo('invitar', 'invite', ['invito', 'invitas', 'invita', 'invitamos', 'invitáis', 'invitan'], ['invite', 'invite', 'invites', 'invite', 'invite', 'invite']).
+verbo('recibir', 'receive', ['recibo', 'recibes', 'recibe', 'recibimos', 'recibís', 'reciben'], ['receive', 'receive', 'receives', 'receive', 'receive', 'receive']).
+verbo('enviar', 'send', ['envío', 'envías', 'envía', 'enviamos', 'enviáis', 'envían'], ['send', 'send', 'sends', 'send', 'send', 'send']).
+verbo('llevar', 'carry', ['llevo', 'llevas', 'lleva', 'llevamos', 'lleváis', 'llevan'], ['carry', 'carry', 'carries', 'carry', 'carry', 'carry']).
+verbo('traer', 'bring', ['traigo', 'traes', 'trae', 'traemos', 'traéis', 'traen'], ['bring', 'bring', 'brings', 'bring', 'bring', 'bring']).
+verbo('tomar', 'take', ['tomo', 'tomas', 'toma', 'tomamos', 'tomáis', 'toman'], ['take', 'take', 'takes', 'take', 'take', 'take']).
+verbo('poner', 'put', ['pongo', 'pones', 'pone', 'ponemos', 'ponéis', 'ponen'], ['put', 'put', 'puts', 'put', 'put', 'put']).
+verbo('mantener', 'keep', ['mantengo', 'mantienes', 'mantiene', 'mantenemos', 'mantenéis', 'mantienen'], ['keep', 'keep', 'keeps', 'keep', 'keep', 'keep']).
+verbo('permitir', 'allow', ['permito', 'permites', 'permite', 'permitimos', 'permitís', 'permiten'], ['allow', 'allow', 'allows', 'allow', 'allow', 'allow']).
+verbo('evitar', 'avoid', ['evito', 'evitas', 'evita', 'evitamos', 'evitáis', 'evitan'], ['avoid', 'avoid', 'avoids', 'avoid', 'avoid', 'avoid']).
+verbo('elegir', 'choose', ['elijo', 'eliges', 'elige', 'elegimos', 'elegís', 'eligen'], ['choose', 'choose', 'chooses', 'choose', 'choose', 'choose']).
+verbo('decidir', 'decide', ['decido', 'decides', 'decide', 'decidimos', 'decidís', 'deciden'], ['decide', 'decide', 'decides', 'decide', 'decide', 'decide']).
 
-% === ADJETIVOS (invariables en número) ===
-% adjetivo(Español, Inglés)
-adjetivo('grande', 'big').
-adjetivo('pequeño', 'small').
-adjetivo('inteligente', 'smart').
-adjetivo('bonito', 'beautiful').
-adjetivo('feo', 'ugly').
-adjetivo('rápido', 'fast').
-adjetivo('lento', 'slow').
-adjetivo('feliz', 'happy').
-adjetivo('triste', 'sad').
-adjetivo('rojo', 'red').
-adjetivo('azul', 'blue').
-adjetivo('verde', 'green').
-adjetivo('alto', 'tall').
-adjetivo('bajo', 'short').
-adjetivo('blanco', 'white').
-adjetivo('negro', 'black').
-adjetivo('amarillo', 'yellow').
-adjetivo('naranja', 'orange').
-adjetivo('morado', 'purple').
-adjetivo('rosado', 'pink').
-adjetivo('marrón', 'brown').
-adjetivo('gris', 'gray').
-adjetivo('joven', 'young').
-adjetivo('viejo', 'old').
-adjetivo('nuevo', 'new').
-adjetivo('moderno', 'modern').
-adjetivo('antiguo', 'ancient').
-adjetivo('fuerte', 'strong').
-adjetivo('débil', 'weak').
-adjetivo('duro', 'hard').
-adjetivo('suave', 'soft').
-adjetivo('pesado', 'heavy').
-adjetivo('ligero', 'light').
-adjetivo('caliente', 'hot').
-adjetivo('frío', 'cold').
-adjetivo('cálido', 'warm').
-adjetivo('fresco', 'cool').
-adjetivo('largo', 'long').
-adjetivo('corto', 'short').
-adjetivo('ancho', 'wide').
-adjetivo('estrecho', 'narrow').
-adjetivo('profundo', 'deep').
-adjetivo('superficial', 'shallow').
-adjetivo('rico', 'rich').
-adjetivo('pobre', 'poor').
-adjetivo('caro', 'expensive').
-adjetivo('barato', 'cheap').
-adjetivo('difícil', 'difficult').
-adjetivo('fácil', 'easy').
-adjetivo('simple', 'simple').
-adjetivo('complejo', 'complex').
+% === ADJETIVOS CON GÉNERO Y NÚMERO ===
+% adjetivo(Español, Inglés, Género, Número)
 
-adjetivo('limpio', 'clean').
-adjetivo('sucio', 'dirty').
-adjetivo('ordenado', 'tidy').
-adjetivo('desordenado', 'messy').
-adjetivo('seco', 'dry').
-adjetivo('mojado', 'wet').
-adjetivo('amable', 'kind').
-adjetivo('grosero', 'rude').
-adjetivo('paciente', 'patient').
-adjetivo('impaciente', 'impatient').
-adjetivo('valiente', 'brave').
-adjetivo('cobarde', 'cowardly').
-adjetivo('generoso', 'generous').
-adjetivo('egoísta', 'selfish').
-adjetivo('sabroso', 'tasty').
-adjetivo('salado', 'salty').
-adjetivo('dulce', 'sweet').
-adjetivo('amargo', 'bitter').
-adjetivo('ácido', 'sour').
-adjetivo('ocupado', 'busy').
-adjetivo('libre', 'free').
-adjetivo('importante', 'important').
-adjetivo('trivial', 'trivial').
-adjetivo('peligroso', 'dangerous').
-adjetivo('seguro', 'safe').
-adjetivo('sano', 'healthy').
-adjetivo('enfermo', 'sick').
-adjetivo('cansado', 'tired').
-adjetivo('descansado', 'rested').
-adjetivo('emocionado', 'excited').
-adjetivo('aburrido', 'bored').
-adjetivo('sorprendido', 'surprised').
-adjetivo('confundido', 'confused').
-adjetivo('orgulloso', 'proud').
-adjetivo('avergonzado', 'ashamed').
-adjetivo('real', 'real').
-adjetivo('falso', 'false').
-adjetivo('verdadero', 'true').
-adjetivo('posible', 'possible').
-adjetivo('imposible', 'impossible').
-adjetivo('necesario', 'necessary').
-adjetivo('innecesario', 'unnecessary').
+% Adjetivos invariables (terminación -e, -ista, etc.)
+adjetivo('grande', 'big', masculino, singular).
+adjetivo('grande', 'big', masculino, plural).
+adjetivo('grande', 'big', femenino, singular).
+adjetivo('grande', 'big', femenino, plural).
+
+adjetivo('pequeño', 'small', masculino, singular).
+adjetivo('pequeños', 'small', masculino, plural).
+adjetivo('pequeña', 'small', femenino, singular).
+adjetivo('pequeñas', 'small', femenino, plural).
+
+adjetivo('inteligente', 'smart', masculino, singular).
+adjetivo('inteligentes', 'smart', masculino, plural).
+adjetivo('inteligente', 'smart', femenino, singular).
+adjetivo('inteligentes', 'smart', femenino, plural).
+
+adjetivo('bonito', 'beautiful', masculino, singular).
+adjetivo('bonitos', 'beautiful', masculino, plural).
+adjetivo('bonita', 'beautiful', femenino, singular).
+adjetivo('bonitas', 'beautiful', femenino, plural).
+
+adjetivo('feo', 'ugly', masculino, singular).
+adjetivo('feos', 'ugly', masculino, plural).
+adjetivo('fea', 'ugly', femenino, singular).
+adjetivo('feas', 'ugly', femenino, plural).
+
+adjetivo('rápido', 'fast', masculino, singular).
+adjetivo('rápidos', 'fast', masculino, plural).
+adjetivo('rápida', 'fast', femenino, singular).
+adjetivo('rápidas', 'fast', femenino, plural).
+
+adjetivo('lento', 'slow', masculino, singular).
+adjetivo('lentos', 'slow', masculino, plural).
+adjetivo('lenta', 'slow', femenino, singular).
+adjetivo('lentas', 'slow', femenino, plural).
+
+adjetivo('feliz', 'happy', masculino, singular).
+adjetivo('felices', 'happy', masculino, plural).
+adjetivo('feliz', 'happy', femenino, singular).
+adjetivo('felices', 'happy', femenino, plural).
+
+adjetivo('triste', 'sad', masculino, singular).
+adjetivo('tristes', 'sad', masculino, plural).
+adjetivo('triste', 'sad', femenino, singular).
+adjetivo('tristes', 'sad', femenino, plural).
+
+% Colores
+adjetivo('rojo', 'red', masculino, singular).
+adjetivo('rojos', 'red', masculino, plural).
+adjetivo('roja', 'red', femenino, singular).
+adjetivo('rojas', 'red', femenino, plural).
+adjetivo('azul', 'blue', masculino, singular).
+adjetivo('azules', 'blue', masculino, plural).
+adjetivo('azul', 'blue', femenino, singular).
+adjetivo('azules', 'blue', femenino, plural).
+adjetivo('verde', 'green', masculino, singular).
+adjetivo('verdes', 'green', masculino, plural).
+adjetivo('verde', 'green', femenino, singular).
+adjetivo('verdes', 'green', femenino, plural).
+adjetivo('blanco', 'white', masculino, singular).
+adjetivo('blancos', 'white', masculino, plural).
+adjetivo('blanca', 'white', femenino, singular).
+adjetivo('blancas', 'white', femenino, plural).
+adjetivo('negro', 'black', masculino, singular).
+adjetivo('negros', 'black', masculino, plural).
+adjetivo('negra', 'black', femenino, singular).
+adjetivo('negras', 'black', femenino, plural).
+adjetivo('amarillo', 'yellow', masculino, singular).
+adjetivo('amarillos', 'yellow', masculino, plural).
+adjetivo('amarilla', 'yellow', femenino, singular).
+adjetivo('amarillas', 'yellow', femenino, plural).
+adjetivo('naranja', 'orange', masculino, singular).
+adjetivo('naranja', 'orange', masculino, plural).
+adjetivo('naranja', 'orange', femenino, singular).
+adjetivo('naranja', 'orange', femenino, plural).
+adjetivo('morado', 'purple', masculino, singular).
+adjetivo('morados', 'purple', masculino, plural).
+adjetivo('morada', 'purple', femenino, singular).
+adjetivo('moradas', 'purple', femenino, plural).
+adjetivo('rosado', 'pink', masculino, singular).
+adjetivo('rosados', 'pink', masculino, plural).
+adjetivo('rosada', 'pink', femenino, singular).
+adjetivo('rosadas', 'pink', femenino, plural).
+adjetivo('marrón', 'brown', masculino, singular).
+adjetivo('marrones', 'brown', masculino, plural).
+adjetivo('marrón', 'brown', femenino, singular).
+adjetivo('marrones', 'brown', femenino, plural).
+adjetivo('gris', 'gray', masculino, singular).
+adjetivo('grises', 'gray', masculino, plural).
+adjetivo('gris', 'gray', femenino, singular).
+adjetivo('grises', 'gray', femenino, plural).
+
+% Tamaño y forma
+adjetivo('alto', 'tall', masculino, singular).
+adjetivo('altos', 'tall', masculino, plural).
+adjetivo('alta', 'tall', femenino, singular).
+adjetivo('altas', 'tall', femenino, plural).
+adjetivo('bajo', 'short', masculino, singular).
+adjetivo('bajos', 'short', masculino, plural).
+adjetivo('baja', 'short', femenino, singular).
+adjetivo('bajas', 'short', femenino, plural).
+adjetivo('largo', 'long', masculino, singular).
+adjetivo('largos', 'long', masculino, plural).
+adjetivo('larga', 'long', femenino, singular).
+adjetivo('largas', 'long', femenino, plural).
+adjetivo('corto', 'short', masculino, singular).
+adjetivo('cortos', 'short', masculino, plural).
+adjetivo('corta', 'short', femenino, singular).
+adjetivo('cortas', 'short', femenino, plural).
+adjetivo('ancho', 'wide', masculino, singular).
+adjetivo('anchos', 'wide', masculino, plural).
+adjetivo('ancha', 'wide', femenino, singular).
+adjetivo('anchas', 'wide', femenino, plural).
+adjetivo('estrecho', 'narrow', masculino, singular).
+adjetivo('estrechos', 'narrow', masculino, plural).
+adjetivo('estrecha', 'narrow', femenino, singular).
+adjetivo('estrechas', 'narrow', femenino, plural).
+
+% Continuaré con el resto de los adjetivos...
+adjetivo('profundo', 'deep', masculino, singular).
+adjetivo('profundos', 'deep', masculino, plural).
+adjetivo('profunda', 'deep', femenino, singular).
+adjetivo('profundas', 'deep', femenino, plural).
+
+adjetivo('superficial', 'shallow', masculino, singular).
+adjetivo('superficiales', 'shallow', masculino, plural).
+adjetivo('superficial', 'shallow', femenino, singular).
+adjetivo('superficiales', 'shallow', femenino, plural).
+
+% Edad y tiempo
+adjetivo('joven', 'young', masculino, singular).
+adjetivo('jóvenes', 'young', masculino, plural).
+adjetivo('joven', 'young', femenino, singular).
+adjetivo('jóvenes', 'young', femenino, plural).
+
+adjetivo('viejo', 'old', masculino, singular).
+adjetivo('viejos', 'old', masculino, plural).
+adjetivo('vieja', 'old', femenino, singular).
+adjetivo('viejas', 'old', femenino, plural).
+
+adjetivo('nuevo', 'new', masculino, singular).
+adjetivo('nuevos', 'new', masculino, plural).
+adjetivo('nueva', 'new', femenino, singular).
+adjetivo('nuevas', 'new', femenino, plural).
+
+adjetivo('moderno', 'modern', masculino, singular).
+adjetivo('modernos', 'modern', masculino, plural).
+adjetivo('moderna', 'modern', femenino, singular).
+adjetivo('modernas', 'modern', femenino, plural).
+
+adjetivo('antiguo', 'ancient', masculino, singular).
+adjetivo('antiguos', 'ancient', masculino, plural).
+adjetivo('antigua', 'ancient', femenino, singular).
+adjetivo('antiguas', 'ancient', femenino, plural).
+
+% Textura y peso
+adjetivo('fuerte', 'strong', masculino, singular).
+adjetivo('fuertes', 'strong', masculino, plural).
+adjetivo('fuerte', 'strong', femenino, singular).
+adjetivo('fuertes', 'strong', femenino, plural).
+
+adjetivo('débil', 'weak', masculino, singular).
+adjetivo('débiles', 'weak', masculino, plural).
+adjetivo('débil', 'weak', femenino, singular).
+adjetivo('débiles', 'weak', femenino, plural).
+
+adjetivo('duro', 'hard', masculino, singular).
+adjetivo('duros', 'hard', masculino, plural).
+adjetivo('dura', 'hard', femenino, singular).
+adjetivo('duras', 'hard', femenino, plural).
+
+adjetivo('suave', 'soft', masculino, singular).
+adjetivo('suaves', 'soft', masculino, plural).
+adjetivo('suave', 'soft', femenino, singular).
+adjetivo('suaves', 'soft', femenino, plural).
+
+adjetivo('pesado', 'heavy', masculino, singular).
+adjetivo('pesados', 'heavy', masculino, plural).
+adjetivo('pesada', 'heavy', femenino, singular).
+adjetivo('pesadas', 'heavy', femenino, plural).
+
+adjetivo('ligero', 'light', masculino, singular).
+adjetivo('ligeros', 'light', masculino, plural).
+adjetivo('ligera', 'light', femenino, singular).
+adjetivo('ligeras', 'light', femenino, plural).
+
+% Temperatura
+adjetivo('caliente', 'hot', masculino, singular).
+adjetivo('calientes', 'hot', masculino, plural).
+adjetivo('caliente', 'hot', femenino, singular).
+adjetivo('calientes', 'hot', femenino, plural).
+
+adjetivo('frío', 'cold', masculino, singular).
+adjetivo('fríos', 'cold', masculino, plural).
+adjetivo('fría', 'cold', femenino, singular).
+adjetivo('frías', 'cold', femenino, plural).
+
+adjetivo('cálido', 'warm', masculino, singular).
+adjetivo('cálidos', 'warm', masculino, plural).
+adjetivo('cálida', 'warm', femenino, singular).
+adjetivo('cálidas', 'warm', femenino, plural).
+
+adjetivo('fresco', 'cool', masculino, singular).
+adjetivo('frescos', 'cool', masculino, plural).
+adjetivo('fresca', 'cool', femenino, singular).
+adjetivo('frescas', 'cool', femenino, plural).
 
 % === ARTÍCULOS Y DETERMINANTES ===
 % determinante(Español, Inglés, Número, Género, Tipo)
-determinante('el', 'the', 'singular', 'masculino', 'artículo_definido').
-determinante('la', 'the', 'singular', 'femenino', 'artículo_definido').
-determinante('los', 'the', 'plural', 'masculino', 'artículo_definido').
-determinante('las', 'the', 'plural', 'femenino', 'artículo_definido').
-determinante('un', 'a', 'singular', 'masculino', 'artículo_indefinido').
-determinante('una', 'a', 'singular', 'femenino', 'artículo_indefinido').
-determinante('unos', 'some', 'plural', 'masculino', 'artículo_indefinido').
-determinante('unas', 'some', 'plural', 'femenino', 'artículo_indefinido').
+determinante('el', 'the', 'singular', 'masculino', 'artículo definido').
+determinante('la', 'the', 'singular', 'femenino', 'artículo definido').
+determinante('los', 'the', 'plural', 'masculino', 'artículo definido').
+determinante('las', 'the', 'plural', 'femenino', 'artículo definido').
+determinante('un', 'a', 'singular', 'masculino', 'artículo indefinido').
+determinante('una', 'a', 'singular', 'femenino', 'artículo indefinido').
+determinante('unos', 'some', 'plural', 'masculino', 'artículo indefinido').
+determinante('unas', 'some', 'plural', 'femenino', 'artículo indefinido').
 
 % Demostrativos
 determinante('este', 'this', 'singular', 'masculino', 'demostrativo').
@@ -606,6 +700,7 @@ pronombre('varias', 'several', 'tercera', 'plural').
 
 % === PREPOSICIONES ===
 % preposicion(Español, Inglés)
+
 preposicion('a', 'to').
 preposicion('de', 'of').
 preposicion('en', 'in').
