@@ -1,13 +1,26 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% BASE DE DATOS L�XICA - TransLog
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BD.pl
 
-% ToDo...
-% Sustantivos(español, inglés, singular/plural, 1st-2nd-3erd-persona)
-% Verbo(InfinitivoEsp, InfinitivoEng, [conjugaciones_esp], [conjugaciones_ing])
-% Adjetivos([conjugaciones_esp], [conjugaciones_ing])
-% Preposicion([conjugaciones_esp], [conjugaciones_ing])
-% conjugaciones = [1st_s, 1st_p, 2nd_s, 2nd_p, 3rd_s, 3rd_p]
+sustantivo('yo', 'i', 'primera', 'singular', neutro).
+sustantivo('tú', 'you', 'segunda', 'singular', neutro).
+sustantivo('usted', 'you', 'segunda', 'singular', neutro).
+sustantivo('él', 'he', 'tercera', 'singular', masculino).
+sustantivo('ella', 'she', 'tercera', 'singular', femenino).
+sustantivo('eso', 'it', 'tercera', 'singular', neutro).
+sustantivo('ello', 'it', 'tercera', 'singular', neutro).
+
+sustantivo('nosotros', 'we', 'primera', 'plural', masculino).
+sustantivo('nosotras', 'we', 'primera', 'plural', femenino).
+sustantivo('vosotros', 'you', 'segunda', 'plural', masculino).
+sustantivo('vosotras', 'you', 'segunda', 'plural', femenino).
+sustantivo('ustedes', 'you', 'segunda', 'plural', neutro).
+sustantivo('ellos', 'they', 'tercera', 'plural', masculino).
+sustantivo('ellas', 'they', 'tercera', 'plural', femenino).
+
+sustantivo('gato', 'cat', 'tercera', 'singular', masculino).
+sustantivo('hombre', 'man', 'tercera', 'singular', masculino).
+sustantivo('mujer', 'woman', 'tercera', 'singular', femenino).
+sustantivo('casa', 'house', 'tercera', 'singular', femenino).
+sustantivo('nombre', 'name', 'tercera', 'singular', masculino).
 
 % INTERJECCIONES
 interjeccion('hola', 'hello').
