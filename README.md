@@ -8,5 +8,6 @@ TranLog es un sistema de traducción automática entre español e inglés implem
 - [ ] Reconocimiento de idiomáticas y frases básicas
 - [ ] Extension de contexto para oraciones compuestas yuxtapuesta
 - [ ] Concordancia gramatical para adjetivos descriptivos
+- [ ] Concordancia gramatical para particulas descriptivas pre-sustantivos
 - [ ] Definicion de estructuras gramaticales para preguntas
 - [ ] Documentacion

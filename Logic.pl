@@ -1,5 +1,7 @@
 % Logic.pl
+
 :- encoding(utf8).
+
 % --------- DEFINICIONES Y VALIDACIONES ----------
 es_delimitador_oracion('.').
 es_delimitador_oracion('!').

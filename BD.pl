@@ -219,6 +219,7 @@ sustantivo('nombre', 'name', 'tercera', 'singular', masculino).
 % === VERBOS ===
 % verbo(InfinitivoEsp, InfinitivoEng, [ConjugacionesEsp], [ConjugacionesEng])
 verbo('ser', 'be', ['soy', 'eres', 'es', 'somos', 'sois', 'son'], ['am', 'are', 'is', 'are', 'are', 'are']).
+verbo('estar', 'be', ['estoy', 'estas', 'esta', 'estamos', 'estan', 'estan'], ['am', 'are', 'is', 'are', 'are', 'are']).
 verbo('tener', 'have', ['tengo', 'tienes', 'tiene', 'tenemos', 'tenéis', 'tienen'], ['have', 'have', 'has', 'have', 'have', 'have']).
 verbo('hablar', 'speak', ['hablo', 'hablas', 'habla', 'hablamos', 'habláis', 'hablan'], ['speak', 'speak', 'speaks', 'speak', 'speak', 'speak']).
 verbo('comer', 'eat', ['como', 'comes', 'come', 'comemos', 'coméis', 'comen'], ['eat', 'eat', 'eats', 'eat', 'eat', 'eat']).
