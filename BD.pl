@@ -2,7 +2,7 @@
 
 
 % INTERJECCIONES
-interjeccion('hola', 'hello').
+interjeccion('hola', 'hellow').
 interjeccion('adiós', 'goodbye').
 interjeccion('gracias', 'thank you').
 interjeccion('por favor', 'please').
@@ -887,3 +887,18 @@ conjuncion('además', 'besides').
 conjuncion('también', 'also').
 conjuncion('incluso', 'even').
 conjuncion('hasta', 'even').
+
+signo('.', '.').
+signo('?', '?').
+signo('!', '!').
+signo(',', ',').
+signo(';', ';').
+signo(':', ':').
+signo('¿', '').
+signo('¡', '').
+signo('(', '(').
+signo(')', ')').
+signo('[', '[').
+signo(']', ']').
+signo('{', '{').
+signo('}', '}').

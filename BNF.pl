@@ -7,16 +7,15 @@
 
 % ---------- INTERFAZ PRINCIPAL ----------
 
-% tranlog_ie/0: Inicia modo traducción inglés → español
+% tranlog_ie/0: Inicia modo traducción inglés -> español
 tranlog_ie :-
     nl,
     writeln('TranLogIE___________________________________________'),
     writeln('[ English -> Spanish ]'),
     writeln('Type text in english (empty line to end)'),
-    nl,
     iniciar_modo_traduccion(ie).
 
-% tranlog_ei/0: Inicia modo traducción español → inglés
+% tranlog_ei/0: Inicia modo traducción español -> inglés  
 tranlog_ei :-
     nl,
     writeln('TranLogEI___________________________________________'),
@@ -26,20 +25,21 @@ tranlog_ei :-
 
 % ---------- MODO DE TRADUCCIÓN ----------
 
-% iniciar_modo_traduccion/1: Controla el ciclo de traducción
-% @param Modo: ei (español→inglés) o ie (inglés→español)
+% iniciar_modo_traduccion/1: Ciclo de traducción
+% @param Modo: ei (español -> inglés) / ie (inglés -> español)
 iniciar_modo_traduccion(Modo) :-
     nl,
     mostrar_prompt(Modo),
     leer_entrada(Entrada),
     procesar_entrada_traduccion(Entrada, Modo).
 
-% mostrar_prompt/1: Muestra el prompt según el modo
-mostrar_prompt(ei) :- writeln('ES >').
-mostrar_prompt(ie) :- writeln('EN >').
+mostrar_prompt(ei) :- writeln('ES > ').
+mostrar_prompt(ie) :- writeln('EN > ').
 
 % leer_entrada/1: Lee entrada del usuario
 % @param Entrada: Texto ingresado por el usuario
+% Convierte los códigos de caracteres a un átomo Prolog
+% -Propuesto por AI, para flexibilidad en el manejo de Inputs-
 leer_entrada(Entrada) :-
     read_line_to_codes(user_input, Codigos),
     atom_codes(Entrada, Codigos).
@@ -47,6 +47,8 @@ leer_entrada(Entrada) :-
 % procesar_entrada_traduccion/2: Procesa la entrada del usuario
 % @param Entrada: Texto a procesar
 % @param Modo: Dirección de traducción
+
+% Salir en caso de linea vacia. 
 procesar_entrada_traduccion('', Modo) :-
     ( Modo = ei -> writeln('Gracias por usar TranLogEI')
     ; Modo = ie -> writeln('Thanks for using TranLogIE')
@@ -54,61 +56,38 @@ procesar_entrada_traduccion('', Modo) :-
     nl, halt.
 
 procesar_entrada_traduccion(Entrada, Modo) :-
-    tokenizar_entrada(Entrada, Tokens),
+	tokenizar_entrada(Entrada, Tokens), % Entrada -> Tokens
     nl,
-    mostrar_resultados(Entrada, Tokens, Modo),
-    iniciar_modo_traduccion(Modo).
+    resultados_traduccion(Entrada, Tokens, Modo),  % Muestra resultados
+    iniciar_modo_traduccion(Modo).  % Vuelve al inicio
 
-% ---------- MOSTRAR RESULTADOS ----------
+% ---------- OUTPUT ----------
 
-% mostrar_resultados/3: Muestra resultados de la traducción
+% resultados_traduccion/3: Divide en oraciones y traduce cada una
 % @param Entrada: Texto original
-% @param Tokens: Lista de tokens
+% @param Tokens: Lista de tokens completa  
 % @param Modo: Dirección de traducción
-mostrar_resultados(Entrada, Tokens, ei) :-
-    format('Entrada: ~w~n', [Entrada]),
-    format('Tokens: ~w~n', [Tokens]),
-    (   traducir_con_conjugacion(Tokens, ei, Traduccion)
-    ->  atomic_list_concat(Traduccion, ' ', Texto),
-        format('Análisis: Conjugación aplicada~n'),
-        format('Traducción: ~w~n', [Texto])
-    ;   analizar_y_traducir(Tokens, ei, Traduccion)
-    ->  atomic_list_concat(Traduccion, ' ', Texto),
-        format('Análisis: Estructura gramatical reconocida~n'),
-        format('Traducción: ~w~n', [Texto])
-    ;   traducir_tokens_ei(Tokens, Traduccion),
-        atomic_list_concat(Traduccion, ' ', Texto),
-        format('Análisis: Traducción palabra por palabra~n'),
-        format('Traducción: ~w~n', [Texto])
+resultados_traduccion(_, Tokens, Modo) :-
+    % Dividir lista de tokens en oraciones individuales
+    % de acuerdo con delimitadores
+    dividir_por_delimitadores(Tokens, Oraciones),
+    
+    % Traducido de cada oración individualmente
+    traducir_lista_oraciones(Oraciones, Modo, OracionesTraducidas),
+
+    % Union de oraciones traducidas. 
+    traduccion_completa(OracionesTraducidas, Modo).
+
+% traduccion_completa/2: Muestra la traducción completa unida
+% @param OracionesTraducidas: Lista de oraciones traducidas
+% @param Modo: Dirección de traducción  
+% Une todas las traducciones en un solo texto final
+traduccion_completa(OracionesTraducidas, Modo) :-
+    unir_oraciones_traducidas(OracionesTraducidas, TextoCompleto),
+    (Modo = ei ->
+	writeln('EN >'),
+        format('~w~n', [TextoCompleto])
+    ;
+    	writeln('ES >'),
+        format('~w~n', [TextoCompleto])
     ).
-
-mostrar_resultados(Entrada, Tokens, ie) :-
-    format('Input: ~w~n', [Entrada]),
-    format('Tokens: ~w~n', [Tokens]),
-    (   traducir_con_conjugacion(Tokens, ie, Traduccion)
-    ->  atomic_list_concat(Traduccion, ' ', Texto),
-        format('Analysis: Conjugation applied~n'),
-        format('Translation: ~w~n', [Texto])
-    ;   analizar_y_traducir(Tokens, ie, Traduccion)
-    ->  atomic_list_concat(Traduccion, ' ', Texto),
-        format('Analysis: Grammatical structure recognized~n'),
-        format('Translation: ~w~n', [Texto])
-    ;   traducir_tokens_ie(Tokens, Traduccion),
-        atomic_list_concat(Traduccion, ' ', Texto),
-        format('Analysis: Word-by-word translation~n'),
-        format('Translation: ~w~n', [Texto])
-    ).
-
-% ---------- PREDICADOS AUXILIARES ----------
-
-% traducir_tokens_ei/2: Traducción palabra por palabra español→inglés
-traducir_tokens_ei([], []).
-traducir_tokens_ei([Token|Resto], [Traduccion|RestoTraducido]) :-
-    traducir_palabra(Token, ei, Traduccion),
-    traducir_tokens_ei(Resto, RestoTraducido).
-
-% traducir_tokens_ie/2: Traducción palabra por palabra inglés→español
-traducir_tokens_ie([], []).
-traducir_tokens_ie([Token|Resto], [Traduccion|RestoTraducido]) :-
-    traducir_palabra(Token, ie, Traduccion),
-    traducir_tokens_ie(Resto, RestoTraducido).
