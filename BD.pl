@@ -1,5 +1,5 @@
 % BD.pl
-
+:- encoding(utf8).
 
 % INTERJECCIONES
 interjeccion('hola', 'hellow').
