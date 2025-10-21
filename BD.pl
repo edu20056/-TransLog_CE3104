@@ -157,7 +157,7 @@ sustantivo('tren', 'train', 'tercera', 'singular', masculino).
 sustantivo('trenes', 'trains', 'tercera', 'plural', masculino).
 sustantivo('avión', 'airplane', 'tercera', 'singular', masculino).
 sustantivo('aviones', 'airplanes', 'tercera', 'plural', masculino).
-sustantivo('agua', 'water', 'tercera', 'singular', femenino).
+sustantivo('agua', 'water', 'tercera', 'singular', masculino).
 sustantivo('comida', 'food', 'tercera', 'singular', femenino).
 sustantivo('pan', 'bread', 'tercera', 'singular', masculino).
 sustantivo('leche', 'milk', 'tercera', 'singular', femenino).
@@ -215,6 +215,12 @@ sustantivo('música', 'music', 'tercera', 'singular', femenino).
 sustantivo('película', 'movie', 'tercera', 'singular', femenino).
 sustantivo('películas', 'movies', 'tercera', 'plural', femenino).
 sustantivo('nombre', 'name', 'tercera', 'singular', masculino).
+
+
+
+
+
+
 
 % === VERBOS ===
 % verbo(InfinitivoEsp, InfinitivoEng, [ConjugacionesEsp], [ConjugacionesEng])
@@ -308,6 +314,7 @@ verbo('permitir', 'allow', ['permito', 'permites', 'permite', 'permitimos', 'per
 verbo('evitar', 'avoid', ['evito', 'evitas', 'evita', 'evitamos', 'evitáis', 'evitan'], ['avoid', 'avoid', 'avoids', 'avoid', 'avoid', 'avoid']).
 verbo('elegir', 'choose', ['elijo', 'eliges', 'elige', 'elegimos', 'elegís', 'eligen'], ['choose', 'choose', 'chooses', 'choose', 'choose', 'choose']).
 verbo('decidir', 'decide', ['decido', 'decides', 'decide', 'decidimos', 'decidís', 'deciden'], ['decide', 'decide', 'decides', 'decide', 'decide', 'decide']).
+verbo('pasar', 'pass', ['paso', 'pasas', 'pasa', 'pasamos', 'pasáis', 'pasan'], ['pass', 'pass', 'passes', 'pass', 'pass', 'pass']).
 
 % === ADJETIVOS CON GÉNERO Y NÚMERO ===
 % adjetivo(Español, Inglés, Género, Número)
@@ -357,6 +364,7 @@ adjetivo('triste', 'sad', masculino, singular).
 adjetivo('tristes', 'sad', masculino, plural).
 adjetivo('triste', 'sad', femenino, singular).
 adjetivo('tristes', 'sad', femenino, plural).
+
 
 % Colores
 adjetivo('rojo', 'red', masculino, singular).
@@ -430,7 +438,7 @@ adjetivo('estrechos', 'narrow', masculino, plural).
 adjetivo('estrecha', 'narrow', femenino, singular).
 adjetivo('estrechas', 'narrow', femenino, plural).
 
-% Continuaré con el resto de los adjetivos...
+
 adjetivo('profundo', 'deep', masculino, singular).
 adjetivo('profundos', 'deep', masculino, plural).
 adjetivo('profunda', 'deep', femenino, singular).
@@ -518,6 +526,26 @@ adjetivo('fresco', 'cool', masculino, singular).
 adjetivo('frescos', 'cool', masculino, plural).
 adjetivo('fresca', 'cool', femenino, singular).
 adjetivo('frescas', 'cool', femenino, plural).
+
+adjetivo('inteligente', 'intelligent', masculino, singular).
+adjetivo('inteligentes', 'intelligent', masculino, plural).
+adjetivo('inteligente', 'intelligent', femenino, singular).
+adjetivo('inteligentes', 'intelligent', femenino, plural).
+
+adjetivo('interesante', 'interesting', masculino, singular).
+adjetivo('interesantes', 'interesting', masculino, plural).
+adjetivo('interesante', 'interesting', femenino, singular).
+adjetivo('interesantes', 'interesting', femenino, plural).
+
+adjetivo('bueno', 'good', masculino, singular).
+adjetivo('buenos', 'good', masculino, plural).
+adjetivo('buena', 'good', femenino, singular).
+adjetivo('buenas', 'good', femenino, plural).
+
+adjetivo('brillante', 'bright', masculino, singular).
+adjetivo('brillantes', 'bright', masculino, plural).
+adjetivo('brillante', 'bright', femenino, singular).
+adjetivo('brillantes', 'bright', femenino, plural).
 
 % === ARTÍCULOS Y DETERMINANTES ===
 % determinante(Español, Inglés, Número, Género, Tipo)
@@ -755,6 +783,8 @@ preposicion('en lugar de', 'instead of').
 preposicion('en cuanto a', 'regarding').
 preposicion('con respecto a', 'regarding').
 preposicion('en vez de', 'instead of').
+preposicion('en','on').  
+preposicion('de','from'). 
 
 % === ADVERBIOS ===
 % adverbio(Español, Inglés)
@@ -860,7 +890,7 @@ conjuncion('porque', 'because').
 conjuncion('si', 'if').
 conjuncion('aunque', 'although').
 
-% === MÁS CONJUNCIONES ===
+
 % Conjunciones coordinantes (unen elementos del mismo nivel)
 conjuncion('e', 'and'). 
 conjuncion('ni', 'nor').
@@ -889,6 +919,7 @@ conjuncion('también', 'also').
 conjuncion('incluso', 'even').
 conjuncion('hasta', 'even').
 
+%signos
 signo('.', '.').
 signo('?', '?').
 signo('!', '!').

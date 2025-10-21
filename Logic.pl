@@ -239,10 +239,13 @@ traducir_sujeto(SujetoCompuesto, ei, InglesCompuesto) :-
     sustantivo(SustEsp, SustIng, _, Numero, _),
     atomic_list_concat([DetIng, SustIng], ' ', InglesCompuesto), !.
 
+% Traducción de sujetos compuestos inglés -> español CORREGIDA
 traducir_sujeto(SujetoCompuesto, ie, EspanolCompuesto) :-
     atomic_list_concat([DetIng, SustIng], ' ', SujetoCompuesto),
-    determinante(DetEsp, DetIng, Numero, _, _),
-    sustantivo(SustEsp, SustIng, _, Numero, _),
+    % PRIMERO buscar el sustantivo para obtener su género
+    sustantivo(SustEsp, SustIng, _, Numero, Genero),
+    % LUEGO buscar el determinante que coincida en número Y género
+    determinante(DetEsp, DetIng, Numero, Genero, _),
     atomic_list_concat([DetEsp, SustEsp], ' ', EspanolCompuesto), !.
 
 traducir_sujeto(Sujeto, _, Sujeto).
@@ -324,6 +327,62 @@ traducir_verbo_conjugado(Verbo, Persona, Numero, ie, Traduccion) :-
 traducir_verbo_conjugado(Verbo, _, _, Modo, Traduccion) :-
     traducir_palabra(Verbo, Modo, Traduccion).
 
+
+
+
+% traducir_palabra_con_contexto/4: Traduce determinantes considerando contexto
+traducir_palabra_con_contexto(Palabra, RestoTokens, ie, Traduccion) :-
+    es_determinante_ingles(Palabra), 
+    encontrar_primer_sustantivo(RestoTokens, Sustantivo),
+    obtener_traduccion_determinante_contextual(Palabra, Sustantivo, Traduccion), !.
+
+
+traducir_palabra_con_contexto(Palabra, _, ie, Traduccion) :-
+    es_determinante_ingles(Palabra),
+    traducir_palabra(Palabra, ie, Traduccion), !.
+
+traducir_palabra_con_contexto(Token, _, Modo, Traduccion) :-
+    traducir_palabra(Token, Modo, Traduccion).
+
+% es_determinante_ingles/1: Identifica determinantes ingleses que necesitan contexto
+es_determinante_ingles('the').
+es_determinante_ingles('this').
+es_determinante_ingles('that').
+es_determinante_ingles('these').
+es_determinante_ingles('those').
+es_determinante_ingles('a').
+es_determinante_ingles('an').
+
+% obtener_traduccion_determinante_contextual/3: Traduce determinante según sustantivo
+obtener_traduccion_determinante_contextual(DetIng, Sustantivo, DetEsp) :-
+    % Obtener género y número del sustantivo
+    (   sustantivo(_, Sustantivo, _, Numero, Genero)
+    ;   sustantivo(Sustantivo, _, _, Numero, Genero)  
+    ),
+    % Buscar determinante que coincida
+    determinante(DetEsp, DetIng, Numero, Genero, _), !.
+
+obtener_traduccion_determinante_contextual(DetIng, _, DetEsp) :-
+    % Fallback: usar masculino singular
+    determinante(DetEsp, DetIng, singular, masculino, _), !.
+
+
+encontrar_primer_sustantivo([], _) :- fail, !.  
+
+encontrar_primer_sustantivo([Token|_], Sustantivo) :-
+    es_sustantivo_valido(Token),
+    !, Sustantivo = Token.
+
+encontrar_primer_sustantivo([_|Resto], Sustantivo) :-
+    encontrar_primer_sustantivo(Resto, Sustantivo).
+
+% es_sustantivo_valido/1: Verifica si un token puede ser sustantivo
+es_sustantivo_valido(Token) :-
+    (sustantivo(_, Token, _, _, _) ; sustantivo(Token, _, _, _, _)),
+    \+ es_determinante(Token),
+    \+ es_preposicion(Token),
+    \+ es_adverbio(Token).
+
 % ---------- TRADUCCIÓN SIMPLE ----------
 
 % traduccion_simple/3: Traducción palabra por palabra
@@ -331,9 +390,10 @@ traducir_verbo_conjugado(Verbo, _, _, Modo, Traduccion) :-
 % @param Modo: Dirección de traducción (ei/ie)
 % @param Traduccion: Lista de tokens traducidos
 % Traduce cada token individualmente sin análisis gramatical
+
 traduccion_simple([], _, []).
 traduccion_simple([Token|Resto], Modo, [Traduccion|RestoTraducido]) :-
-    traducir_palabra(Token, Modo, Traduccion),
+    traducir_palabra_con_contexto(Token, Resto, Modo, Traduccion),
     traduccion_simple(Resto, Modo, RestoTraducido).
 
 % traducir_palabra/3: Busca traducción en base de datos por categorías
@@ -378,6 +438,7 @@ traducir_palabra(Palabra, ie, Espanol) :-
 traducir_palabra(Palabra, ie, Espanol) :-
     adjetivo(Espanol, Palabra, _, _), !.
 traducir_palabra(Palabra, ie, Espanol) :-
+    \+ es_determinante_ingles(Palabra),  % ← EXCLUIR determinantes contextuales
     determinante(Espanol, Palabra, _, _, _), !.
 traducir_palabra(Palabra, ie, Espanol) :-
     pronombre(Espanol, Palabra, _, _), !.
