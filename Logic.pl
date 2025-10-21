@@ -4,8 +4,7 @@
 es_delimitador_oracion('.').
 es_delimitador_oracion('!').
 es_delimitador_oracion('?').
-es_delimitador_oracion(Token) :-
-    es_conjuncion(Token).
+
 
 es_sustantivo(Palabra) :- sustantivo(Palabra, _, _, _, _).
 es_sustantivo(Palabra) :- sustantivo(_, Palabra, _, _, _).
@@ -387,3 +386,122 @@ traducir_palabra(Palabra, ie, Espanol) :-
     conjuncion(Espanol, Palabra), !.
 
 traducir_palabra(Palabra, _, Palabra).
+
+
+
+
+% ============================================================
+% DETECCIÓN DE FRASES IDIOMÁTICAS - CON DEBUG
+% ============================================================
+
+% ------------------------------------------------------------
+% PREDICADOS PARA FRASES IDIOMÁTICAS
+% ------------------------------------------------------------
+
+% Español -> Inglés
+detectar_frase_idiomatica(Tokens, ei, Traduccion) :-
+    writeln('=== BUSCANDO FRASE IDIOMÁTICA ES->EN ==='),
+    writeln('Tokens recibidos:'), writeln(Tokens),
+    
+    % REMOVER DELIMITADORES antes de buscar (usando tus definiciones)
+    remover_delimitadores(Tokens, TokensLimpios),
+    writeln('Tokens limpios:'), writeln(TokensLimpios),
+    
+    atomic_list_concat(TokensLimpios, ' ', FraseCompleta),
+    downcase_atom(FraseCompleta, FraseLower),
+    writeln('Frase a buscar:'), writeln(FraseLower),
+    
+    (frase_idiomatica(FraseLower, Ingles) -> 
+        writeln('Encontrado en frase_idiomatica:'), writeln(Ingles)
+    ; 
+        (frase_idiomatica_verbo(FraseLower, Ingles) ->
+            writeln('Encontrado en frase_idiomatica_verbo:'), writeln(Ingles)
+        ;
+            writeln('NO ENCONTRADO'), fail
+        )
+    ),
+    
+    atom_to_tokens(Ingles, TraduccionLimpia),
+    writeln('Traduccion limpia:'), writeln(TraduccionLimpia),
+    
+    % Mantener los delimitadores originales en la traducción
+    agregar_delimitadores(TraduccionLimpia, Tokens, Traduccion),
+    writeln('Traduccion final con delimitadores:'), writeln(Traduccion),
+    !.
+
+% Inglés -> Español  
+detectar_frase_idiomatica(Tokens, ie, Traduccion) :-
+    writeln('=== BUSCANDO FRASE IDIOMÁTICA EN->ES ==='),
+    writeln('Tokens recibidos:'), writeln(Tokens),
+    
+    % REMOVER DELIMITADORES antes de buscar (usando tus definiciones)
+    remover_delimitadores(Tokens, TokensLimpios),
+    writeln('Tokens limpios:'), writeln(TokensLimpios),
+    
+    atomic_list_concat(TokensLimpios, ' ', FraseCompleta),
+    downcase_atom(FraseCompleta, FraseLower),
+    writeln('Frase a buscar:'), writeln(FraseLower),
+    
+    (frase_idiomatica(Espanol, FraseLower) -> 
+        writeln('Encontrado en frase_idiomatica:'), writeln(Espanol)
+    ; 
+        (frase_idiomatica_verbo(Espanol, FraseLower) ->
+            writeln('Encontrado en frase_idiomatica_verbo:'), writeln(Espanol)
+        ;
+            writeln('NO ENCONTRADO'), fail
+        )
+    ),
+    
+    atom_to_tokens(Espanol, TraduccionLimpia),
+    writeln('Traduccion limpia:'), writeln(TraduccionLimpia),
+    
+    % Mantener los delimitadores originales en la traducción
+    agregar_delimitadores(TraduccionLimpia, Tokens, Traduccion),
+    writeln('Traduccion final con delimitadores:'), writeln(Traduccion),
+    !.
+
+% ------------------------------------------------------------
+% AUXILIARES PARA MANEJO DE DELIMITADORES (usando tus definiciones)
+% ------------------------------------------------------------
+
+% Remover delimitadores finales
+remover_delimitadores(Tokens, TokensLimpios) :-
+    (append(TokensLimpios, [Delim], Tokens), es_delimitador_oracion(Delim) ->
+        true
+    ;
+        TokensLimpios = Tokens
+    ).
+
+% Agregar delimitadores a la traducción
+agregar_delimitadores(TraduccionLimpia, TokensOriginal, Traduccion) :-
+    (append(_, [Delim], TokensOriginal), es_delimitador_oracion(Delim) ->
+        append(TraduccionLimpia, [Delim], Traduccion)
+    ;
+        Traduccion = TraduccionLimpia
+    ).
+
+% ------------------------------------------------------------
+% SOBREESCRIBIR traducir_oracion_individual PARA PRIORIDAD
+% ------------------------------------------------------------
+
+:- abolish(traducir_oracion_individual/3).
+traducir_oracion_individual(Tokens, Modo, Traduccion) :-
+    writeln('=== traducir_oracion_individual INICIADO ==='),
+    
+    % PRIMERO buscar frases idiomáticas
+    (detectar_frase_idiomatica(Tokens, Modo, Traduccion) ->
+        writeln('*** USANDO FRASE IDIOMÁTICA ***')
+    ;
+        writeln('--- No es frase idiomática, usando traducción normal ---'),
+        % Si no encuentra, usar sistema normal
+        (traducir_con_conjugacion(Tokens, Modo, Traduccion)
+        ; 
+        traduccion_simple(Tokens, Modo, Traduccion))
+    ).
+
+% ------------------------------------------------------------
+% AUXILIAR
+% ------------------------------------------------------------
+
+atom_to_tokens(Atom, Tokens) :-
+    atomic_list_concat(Tokens, ' ', Atom).

@@ -1,6 +1,19 @@
 % BD.pl
 :- encoding(utf8).
 
+% PHRASES IDEOMÁTICAS
+% Con verbos
+frase_idiomatica_verbo('estar en las nubes', 'be daydreaming').
+frase_idiomatica_verbo('llover a cántaros', 'rain cats and dogs').
+frase_idiomatica_verbo('buscar tres pies al gato', 'split hairs').
+frase_idiomatica_verbo('costar un ojo de la cara', 'cost an arm and a leg').
+% Sin verbos
+frase_idiomatica('más vale tarde que nunca', 'better late than never').
+frase_idiomatica('a lo hecho pecho', 'what is done is done').
+frase_idiomatica('ojos que no ven corazón que no siente', 'out of sight out of mind').
+frase_idiomatica('de tal palo tal astilla', 'like father like son').
+frase_idiomatica('no todo lo que brilla es oro', 'not all that glitters is gold').
+
 % INTERJECCIONES
 interjeccion('hola', 'hellow').
 interjeccion('adiós', 'goodbye').
@@ -307,6 +320,8 @@ verbo('permitir', 'allow', ['permito', 'permites', 'permite', 'permitimos', 'per
 verbo('evitar', 'avoid', ['evito', 'evitas', 'evita', 'evitamos', 'evitáis', 'evitan'], ['avoid', 'avoid', 'avoids', 'avoid', 'avoid', 'avoid']).
 verbo('elegir', 'choose', ['elijo', 'eliges', 'elige', 'elegimos', 'elegís', 'eligen'], ['choose', 'choose', 'chooses', 'choose', 'choose', 'choose']).
 verbo('decidir', 'decide', ['decido', 'decides', 'decide', 'decidimos', 'decidís', 'deciden'], ['decide', 'decide', 'decides', 'decide', 'decide', 'decide']).
+verbo('buscar', 'search', ['busco', 'buscas', 'busca', 'buscamos', 'buscan', 'buscan'], ['search', 'search', 'searchs', 'search', 'search', 'search']).
+verbo('dividir', 'split', ['divido', 'divides', 'divide', 'dividimos', 'dividen', 'dividen'], ['split', 'split', 'splits', 'split', 'split', 'split']).
 
 % === ADJETIVOS CON GÉNERO Y NÚMERO ===
 % adjetivo(Español, Inglés, Género, Número)
