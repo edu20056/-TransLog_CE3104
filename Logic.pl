@@ -4,10 +4,10 @@
 
 % --------- DEFINICIONES Y VALIDACIONES ----------
 es_delimitador_oracion('.').
-es_delimitador_oracion('!').
-es_delimitador_oracion('?').
 es_delimitador_oracion(Token) :-
     es_conjuncion(Token).
+es_delimitador_oracion(Token) :-
+    es_signo(Token).
 
 es_sustantivo(Palabra) :- sustantivo(Palabra, _, _, _, _).
 es_sustantivo(Palabra) :- sustantivo(_, Palabra, _, _, _).
@@ -37,6 +37,9 @@ es_adverbio(Palabra) :- adverbio(_, Palabra).
 
 es_conjuncion(Palabra) :- conjuncion(Palabra, _).
 es_conjuncion(Palabra) :- conjuncion(_, Palabra).
+
+es_signo(Palabra) :- signo(Palabra, _).
+es_signo(Palabra) :- signo(_, Palabra).
 
 % -------- TOKENIZACIÓN ---------
 
@@ -411,10 +414,14 @@ analizar_oracion(Tokens, Modo, Sujeto, SV, Resto) :-
 traducir_sn_estructura(sn(Nucleo), Modo, Traduccion) :-
     !, traducir_palabra(Nucleo, Modo, Traduccion).
 
+% Esto YA debería estar en tu código:
 traducir_sn_estructura(sn(Det, Nucleo), ie, Traduccion) :-
     !,
-    obtener_genero_numero_sustantivo(Nucleo, Genero, Numero),
-    obtener_traduccion_determinante(Det, Genero, Numero, DetTrad),
+    (obtener_genero_numero_sustantivo(Nucleo, Genero, Numero) ->
+        obtener_traduccion_determinante(Det, Genero, Numero, DetTrad)
+    ;
+        obtener_traduccion_determinante(Det, masculino, singular, DetTrad)
+    ),
     traducir_palabra(Nucleo, ie, NucleoTrad),
     atomic_list_concat([DetTrad, NucleoTrad], ' ', Traduccion).
 
@@ -507,8 +514,23 @@ obtener_traduccion_determinante(Det, _, _, Det).
 traducir_oracion_individual(Oracion, Modo, Traducida) :-
     (traducir_por_sintagmas(Oracion, Modo, Traducida)
      ;
+     traducir_solo_sintagma(Oracion, Modo, Traducida)
+     ;
      traduccion_simple(Oracion, Modo, Traducida)
     ).
+
+% AGREGAR ESTA FUNCIÓN:
+traducir_solo_sintagma(Tokens, Modo, Traducida) :-
+    sn(Tokens, SN, []),  % Verifica que todos los tokens formen un SN
+    traducir_sn_estructura(SN, Modo, Traducida), !.
+
+% También manejar SN con puntuación
+traducir_solo_sintagma(Tokens, Modo, Traducida) :-
+    append(SNTokens, [Puntuacion], Tokens),
+    sn(SNTokens, SN, []),
+    es_delimitador_oracion(Puntuacion),
+    traducir_sn_estructura(SN, Modo, SNTraducido),
+    atomic_list_concat([SNTraducido, Puntuacion], ' ', Traducida), !.
 
 traducir_por_sintagmas(Tokens, Modo, Traducida) :-
     analizar_oracion(Tokens, Modo, Sujeto, SV, Resto),
@@ -530,8 +552,17 @@ traducir_lista_oraciones([Oracion|Resto], Modo, [Traducida|RestoTrad]) :-
     traducir_lista_oraciones(Resto, Modo, RestoTrad).
 
 unir_oraciones_traducidas(Oraciones, Texto) :-
-    maplist(atomic_list_concat_space, Oraciones, OracionesStrings),
-    atomic_list_concat(OracionesStrings, ' ', Texto).
+    maplist(asegurar_atomo, Oraciones, OracionesAtomos),
+    atomic_list_concat(OracionesAtomos, ' ', Texto).
+
+asegurar_atomo(Elemento, Atom) :-
+    (atom(Elemento) -> 
+        Atom = Elemento
+    ; is_list(Elemento) -> 
+        atomic_list_concat(Elemento, ' ', Atom)
+    ; 
+        atom_string(Elemento, Atom)
+    ).
 
 atomic_list_concat_space(Lista, Texto) :-
     atomic_list_concat(Lista, ' ', Texto).
