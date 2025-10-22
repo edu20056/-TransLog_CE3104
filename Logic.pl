@@ -217,7 +217,7 @@ sv_con_adverbio([Verbo, Adv|Resto], Sujeto, Modo, sv(VerboConj, adv(Adv)), Resto
     persona_numero_sujeto(Sujeto, Persona, Numero),
     conjugar_verbo(Verbo, Persona, Numero, Modo, VerboConj), !.
 
-% SV con Adjetivo Predicativo: Verbo copulativo + Adjetivo
+% SV con Adjetivo Predicativo
 sv_con_adjetivo([Verbo, Adj|Resto], Sujeto, Modo, sv(VerboConj, pred(AdjConc)), Resto) :-
     es_verbo(Verbo),
     es_adjetivo(Adj),
@@ -654,7 +654,7 @@ obtener_traduccion_determinante_contextual(DetIng, _, DetEsp) :-
 obtener_persona_numero_contexto(_, Tokens, Persona, Numero) :-
     encontrar_sujeto_en_contexto(Tokens, Sujeto),          % Buscar sujeto en tokens restantes
     persona_numero_sujeto(Sujeto, Persona, Numero), !.    % Obtener persona/número
-obtener_persona_numero_contexto(_, _, 'segunda', 'singular'). % Valor por defecto
+obtener_persona_numero_contexto(_, _, 'tercera', 'singular'). % Valor por defecto
 
 % Encontrar sujeto en contexto (tokens restantes)
 encontrar_sujeto_en_contexto(Tokens, Sujeto) :-
