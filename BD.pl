@@ -157,12 +157,13 @@ sustantivo('tren', 'train', 'tercera', 'singular', masculino).
 sustantivo('trenes', 'trains', 'tercera', 'plural', masculino).
 sustantivo('avión', 'airplane', 'tercera', 'singular', masculino).
 sustantivo('aviones', 'airplanes', 'tercera', 'plural', masculino).
-sustantivo('agua', 'water', 'tercera', 'singular', femenino).
+sustantivo('agua', 'water', 'tercera', 'singular', masculino).
 sustantivo('comida', 'food', 'tercera', 'singular', femenino).
 sustantivo('pan', 'bread', 'tercera', 'singular', masculino).
 sustantivo('leche', 'milk', 'tercera', 'singular', femenino).
 sustantivo('carne', 'meat', 'tercera', 'singular', femenino).
 sustantivo('fruta', 'fruit', 'tercera', 'singular', femenino).
+sustantivo('manzana', 'apple', 'tercera', 'singular', femenino).
 sustantivo('frutas', 'fruits', 'tercera', 'plural', femenino).
 sustantivo('verdura', 'vegetable', 'tercera', 'singular', femenino).
 sustantivo('verduras', 'vegetables', 'tercera', 'plural', femenino).
@@ -218,6 +219,8 @@ sustantivo('nombre', 'name', 'tercera', 'singular', masculino).
 
 % === VERBOS ===
 % verbo(InfinitivoEsp, InfinitivoEng, [ConjugacionesEsp], [ConjugacionesEng])
+verbo('no', 'not', ['no', 'no', 'no', 'no', 'no', 'no'], ['don\'t', 'don\'t', 'doesn\'t', 'don\'t', 'don\'t', 'don\'t']).
+verbo('no ser', 'not to be', ['no soy', 'no eres', 'no es', 'no somos', 'no sois', 'no son'], ['amn\'t', 'aren\'t', 'isn\'t', 'aren\'t', 'aren\'t', 'aren\'t']).
 verbo('ser', 'be', ['soy', 'eres', 'es', 'somos', 'sois', 'son'], ['am', 'are', 'is', 'are', 'are', 'are']).
 verbo('estar', 'be', ['estoy', 'estas', 'esta', 'estamos', 'estan', 'estan'], ['am', 'are', 'is', 'are', 'are', 'are']).
 verbo('tener', 'have', ['tengo', 'tienes', 'tiene', 'tenemos', 'tenéis', 'tienen'], ['have', 'have', 'has', 'have', 'have', 'have']).
@@ -238,7 +241,6 @@ verbo('hacer', 'do', ['hago', 'haces', 'hace', 'hacemos', 'hacéis', 'hacen'], [
 verbo('decir', 'say', ['digo', 'dices', 'dice', 'decimos', 'decís', 'dicen'], ['say', 'say', 'says', 'say', 'say', 'say']).
 verbo('ir', 'go', ['voy', 'vas', 'va', 'vamos', 'vais', 'van'], ['go', 'go', 'goes', 'go', 'go', 'go']).
 verbo('ver', 'see', ['veo', 'ves', 've', 'vemos', 'veis', 'ven'], ['see', 'see', 'sees', 'see', 'see', 'see']).
-verbo('venir', 'come', ['vengo', 'vienes', 'viene', 'venimos', 'venís', 'vienen'], ['come', 'come', 'comes', 'come', 'come', 'come']).
 verbo('saber', 'know', ['sé', 'sabes', 'sabe', 'sabemos', 'sabéis', 'saben'], ['know', 'know', 'knows', 'know', 'know', 'know']).
 verbo('pensar', 'think', ['pienso', 'piensas', 'piensa', 'pensamos', 'pensáis', 'piensan'], ['think', 'think', 'thinks', 'think', 'think', 'think']).
 verbo('mirar', 'look', ['miro', 'miras', 'mira', 'miramos', 'miráis', 'miran'], ['look', 'look', 'looks', 'look', 'look', 'look']).
@@ -308,6 +310,7 @@ verbo('permitir', 'allow', ['permito', 'permites', 'permite', 'permitimos', 'per
 verbo('evitar', 'avoid', ['evito', 'evitas', 'evita', 'evitamos', 'evitáis', 'evitan'], ['avoid', 'avoid', 'avoids', 'avoid', 'avoid', 'avoid']).
 verbo('elegir', 'choose', ['elijo', 'eliges', 'elige', 'elegimos', 'elegís', 'eligen'], ['choose', 'choose', 'chooses', 'choose', 'choose', 'choose']).
 verbo('decidir', 'decide', ['decido', 'decides', 'decide', 'decidimos', 'decidís', 'deciden'], ['decide', 'decide', 'decides', 'decide', 'decide', 'decide']).
+verbo('pasar', 'pass', ['paso', 'pasas', 'pasa', 'pasamos', 'pasáis', 'pasan'], ['pass', 'pass', 'passes', 'pass', 'pass', 'pass']).
 
 % === ADJETIVOS CON GÉNERO Y NÚMERO ===
 % adjetivo(Español, Inglés, Género, Número)
@@ -357,6 +360,7 @@ adjetivo('triste', 'sad', masculino, singular).
 adjetivo('tristes', 'sad', masculino, plural).
 adjetivo('triste', 'sad', femenino, singular).
 adjetivo('tristes', 'sad', femenino, plural).
+
 
 % Colores
 adjetivo('rojo', 'red', masculino, singular).
@@ -430,7 +434,7 @@ adjetivo('estrechos', 'narrow', masculino, plural).
 adjetivo('estrecha', 'narrow', femenino, singular).
 adjetivo('estrechas', 'narrow', femenino, plural).
 
-% Continuaré con el resto de los adjetivos...
+
 adjetivo('profundo', 'deep', masculino, singular).
 adjetivo('profundos', 'deep', masculino, plural).
 adjetivo('profunda', 'deep', femenino, singular).
@@ -518,6 +522,26 @@ adjetivo('fresco', 'cool', masculino, singular).
 adjetivo('frescos', 'cool', masculino, plural).
 adjetivo('fresca', 'cool', femenino, singular).
 adjetivo('frescas', 'cool', femenino, plural).
+
+adjetivo('inteligente', 'intelligent', masculino, singular).
+adjetivo('inteligentes', 'intelligent', masculino, plural).
+adjetivo('inteligente', 'intelligent', femenino, singular).
+adjetivo('inteligentes', 'intelligent', femenino, plural).
+
+adjetivo('interesante', 'interesting', masculino, singular).
+adjetivo('interesantes', 'interesting', masculino, plural).
+adjetivo('interesante', 'interesting', femenino, singular).
+adjetivo('interesantes', 'interesting', femenino, plural).
+
+adjetivo('bueno', 'good', masculino, singular).
+adjetivo('buenos', 'good', masculino, plural).
+adjetivo('buena', 'good', femenino, singular).
+adjetivo('buenas', 'good', femenino, plural).
+
+adjetivo('brillante', 'bright', masculino, singular).
+adjetivo('brillantes', 'bright', masculino, plural).
+adjetivo('brillante', 'bright', femenino, singular).
+adjetivo('brillantes', 'bright', femenino, plural).
 
 % === ARTÍCULOS Y DETERMINANTES ===
 % determinante(Español, Inglés, Número, Género, Tipo)
@@ -755,6 +779,8 @@ preposicion('en lugar de', 'instead of').
 preposicion('en cuanto a', 'regarding').
 preposicion('con respecto a', 'regarding').
 preposicion('en vez de', 'instead of').
+preposicion('en','on').  
+preposicion('de','from'). 
 
 % === ADVERBIOS ===
 % adverbio(Español, Inglés)
@@ -860,7 +886,7 @@ conjuncion('porque', 'because').
 conjuncion('si', 'if').
 conjuncion('aunque', 'although').
 
-% === MÁS CONJUNCIONES ===
+
 % Conjunciones coordinantes (unen elementos del mismo nivel)
 conjuncion('e', 'and'). 
 conjuncion('ni', 'nor').
@@ -889,6 +915,7 @@ conjuncion('también', 'also').
 conjuncion('incluso', 'even').
 conjuncion('hasta', 'even').
 
+%signos
 signo('.', '.').
 signo('?', '?').
 signo('!', '!').
